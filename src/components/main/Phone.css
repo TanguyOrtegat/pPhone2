@@ -1,6 +1,30 @@
-.phone {
+.phone-container {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 300px;
+  height: 600px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  font-family: "SFProTextRegular";
+}
+.phone-content {
+  width: 260px;
+  height: 567px;
+  overflow: hidden;
   background-size: cover;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.test-bg {
+  background-image: url("https://i.imgur.com/aI8fEEZ.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+  width: 275px;
+  height: 600px;
+  position: absolute;
+  top: -0px;
+  right: -3px;
+  left: 2px;
 }

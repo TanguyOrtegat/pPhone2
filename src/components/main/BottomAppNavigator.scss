@@ -1,0 +1,19 @@
+.bottom-nav-container {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-nav-list {
+    height: 62px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px;
+
+    border-radius: 16px;
+}
+
+.bottom-nav-list-container {
+    display: flex;
+    margin-left: 10px;
+    padding-top: 10px;
+}

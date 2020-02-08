@@ -1,0 +1,14 @@
+.app-screen {
+    height: 435px;
+}
+
+.app-screen-container {
+    // background-color: red;
+    margin: 18px;
+    margin-right: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}

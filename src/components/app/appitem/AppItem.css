@@ -1,0 +1,19 @@
+.app-icon {
+  display: block;
+  width: 42px;
+  margin-right: 18px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: white;
+}
+.app-icon-image {
+  width: 42px;
+  height: 42px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.app-text {
+  font-size: 9px;
+  margin-bottom: 2px;
+  color: rgba(240, 240, 240, 0.8);
+}

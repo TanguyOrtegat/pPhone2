@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        path: path.resolve('../dist'),
+        path: path.resolve('dist'),
         filename: '[name].js',
         publicPath: ''
     },

@@ -11,7 +11,7 @@ const applicationList: IAppItemProps[] = [
     { name: 'Mail', icon: 'mail' },
     { name: 'Calendrier', icon: 'calendar' },
     { name: 'Galerie', icon: 'photos' },
-    { name: "Camera", icon: 'camera' },
+    { name: "Camera", icon: 'camera', path: 'camera' },
     { name: 'Maps', icon: 'map' },
     { name: 'Horloge', icon: 'clock' },
     { name: 'Météo', icon: 'weather' },
@@ -32,7 +32,7 @@ const applicationList: IAppItemProps[] = [
 const AppScreen: React.FC = () => {
     const getApplications = () => {
         return applicationList.map((e) => {
-            return <AppItem name={e.name} icon={e.icon} />
+            return <AppItem {...e} />
         })
     }
 

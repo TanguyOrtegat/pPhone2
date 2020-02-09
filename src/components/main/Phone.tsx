@@ -8,6 +8,7 @@ import { HeaderBar } from "./HeaderBar";
 
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import routes from "../../routes";
+import { BottomPhoneNavigator } from "./BottomPhoneNavigator";
 
 
 const PhoneCoque = styled.div`
@@ -35,9 +36,9 @@ export const Phone: React.FC = (props: any) => {
             <div className="test-bg"/>
 
             <Suspense fallback={loading()}>
-                <div className="phone-content">
-                    <HeaderBar />
-                    <HashRouter basename='/phone'>
+                <HashRouter basename='/phone'>
+                    <div className="phone-content">
+                        <HeaderBar />
                         <Switch>
                             {routes.map((route, idx) => {
                                 return route.component ? (
@@ -51,8 +52,9 @@ export const Phone: React.FC = (props: any) => {
                                 ) : (null);
                             })}
                         </Switch>
-                    </HashRouter>
-                </div>
+                    </div>
+                    <Route component={BottomPhoneNavigator} />
+                </HashRouter>
             </Suspense>
         </div>
     )

@@ -26,6 +26,7 @@ import FacebookIcon from '../../../assets/icons/facebook.png'
 import InstagramIcon from '../../../assets/icons/instagram.png'
 import MessagesIcon from '../../../assets/icons/messages.png'
 import MessengerIcon from '../../../assets/icons/messenger.png'
+import { Link } from "react-router-dom";
 
 const iconList = {
     'mail': MailIcon,
@@ -55,14 +56,21 @@ const iconList = {
 
 export interface IAppItemProps {
     name?: string,
-    icon: keyof typeof iconList
+    icon: keyof typeof iconList,
+    path?: string
 }
 
 export const AppItem: React.FC<IAppItemProps> = (props: IAppItemProps) => {
+    const goToApp = () => {
+
+    }
+
+    console.log(props.path)
+
     return (
-        <div className="app-icon">
+        <Link to={props.path ? `app/${props.path}` : ""} className="app-icon" onClick={goToApp}>
             <div className="app-icon-image" style={{ backgroundImage: `url(${iconList[props.icon]})` }} />
             {props.name && <span className="app-text">{props.name}</span>}
-        </div>
+        </Link>
     )
 };

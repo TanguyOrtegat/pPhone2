@@ -14,11 +14,9 @@
 
 .phone-content {
     width: 260px;
-    height: 567px;
+    height: 570px;
 
     overflow: hidden;
-
-    background-size: cover;
 
     margin-left: 20px;
     margin-top: 15px;
@@ -38,4 +36,13 @@
     top: -0px;
     right: -3px;
     left: 2px;
+}
+
+.app-container {
+    width: 260px;
+    height: 570px;
+    position: relative;
+
+    overflow: hidden;
+    color: black;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import './BottomAppNavigator.scss'
-import { AppItem } from "../app/appitem";
+import { AppItem } from "../home/appitem";
 
 export const BottomAppNavigator: React.FC = () => {
     return (

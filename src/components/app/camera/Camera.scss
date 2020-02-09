@@ -1,0 +1,63 @@
+.camera-bottom-nav {
+    width: 100%;
+    height: 110px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.camera-nav-buttons {
+    width: 100%;
+    height: 48px;
+
+    padding-top: 18px;
+    padding-left: 16px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.camera-button-galery {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+
+    margin-top: 8px;
+
+    background-image: url('../../../assets/icons/camera_roll.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.camera-button-record {
+    display: inline-block;
+    width: 48px;
+    height: 100%;
+
+    background-image: url('../../../assets/icons/record.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.camera-button-turn {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+
+    margin-top: 8px;
+    padding-right: 38px;
+
+    background-image: url('../../../assets/icons/switch_camera.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    float: right;
+}
+
+.gameview-container {
+    width: 100%;
+    height: 100%;
+}

@@ -7,6 +7,9 @@ import wifi from '../../assets/icons/wifi.png'
 import service from '../../assets/icons/service.png'
 import location from '../../assets/icons/location.png'
 
+// TODO: We need to do something dynamic for the color of the header, as if the background is too light
+// it would be hard to read the text and the icons, we also should switch to black when using a "light theme" app
+
 export const HeaderBar: React.FC = () => {
     return (
         <div className="phone-header">

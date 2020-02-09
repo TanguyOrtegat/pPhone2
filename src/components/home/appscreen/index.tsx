@@ -3,6 +3,9 @@ import React from "react";
 import './AppScreen.scss'
 
 import { AppItem, IAppItemProps } from "../appitem";
+import { BottomAppNavigator } from "../../main/BottomAppNavigator";
+
+import background from '../../../assets/backgrounds/001.png'
 
 const applicationList: IAppItemProps[] = [
     { name: 'Mail', icon: 'mail' },
@@ -26,7 +29,7 @@ const applicationList: IAppItemProps[] = [
     { name: 'Réglages', icon: 'settings' },
 ]
 
-export const AppScreen: React.FC = () => {
+const AppScreen: React.FC = () => {
     const getApplications = () => {
         return applicationList.map((e) => {
             return <AppItem name={e.name} icon={e.icon} />
@@ -34,10 +37,15 @@ export const AppScreen: React.FC = () => {
     }
 
     return (
-        <div className="app-screen">
-            <div className="app-screen-container">
-                {getApplications()}
+        <div className="app-screen-background" style={{ backgroundImage: `url(${background})` }}>
+            <div className="app-screen">
+                <div className="app-screen-container">
+                    {getApplications()}
+                </div>
             </div>
+            <BottomAppNavigator />
         </div>
     )
 };
+
+export default AppScreen;

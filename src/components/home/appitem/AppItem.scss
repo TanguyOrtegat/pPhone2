@@ -2,19 +2,26 @@
 .app-icon {
     display: block;
     // background-color: red;
-    width: 42px;
+    width: 48px;
     
-    margin-right: 18px;
+    margin-right: 12px;
     margin-bottom: 8px;
 
     text-align: center;
 
     color: white;
+    &:hover {
+        background-color: rgba(240, 240, 240, 0.1);
+        border-radius: 8px;
+    }
 }
 
 .app-icon-image {
     width: 42px;
     height: 42px;
+
+    display:block;
+    margin:auto;
 
     background-size: contain;
     background-repeat: no-repeat;
@@ -22,6 +29,6 @@
 
  .app-text {
     font-size: 9px;
-    margin-bottom: 2px;
     color: rgba(240, 240, 240, 0.8);
+    padding-bottom: 6px;
 }

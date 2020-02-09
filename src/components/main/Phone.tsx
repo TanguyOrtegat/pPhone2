@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import './Phone.scss'
 import coque from '../../assets/coque.png'
 import styled from "styled-components";
 
-import background from '../../assets/backgrounds/001.png'
 import { HeaderBar } from "./HeaderBar";
-import { BottomAppNavigator } from "./BottomAppNavigator";
-import { AppScreen } from "../app/appscreen";
+
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import routes from "../../routes";
+
 
 const PhoneCoque = styled.div`
     position: absolute;
@@ -21,19 +22,38 @@ const PhoneCoque = styled.div`
 
     background-size: cover;
     background-image: url(${coque});
+
+    pointer-events: none;
 `
 
-export const Phone: React.FC = () => {
+export const Phone: React.FC = (props: any) => {
+    const loading = () => <div className="animated fadeIn pt-1 text-center">Chargement...</div>
+
     return (
         <div className="phone-container">
             <PhoneCoque />
             <div className="test-bg"/>
 
-            <div className="phone-content" style={{ backgroundImage: `url(${background})` }}>
-                <HeaderBar />
-                <AppScreen />
-                <BottomAppNavigator />
-            </div>
+            <Suspense fallback={loading()}>
+                <div className="phone-content">
+                    <HeaderBar />
+                    <HashRouter>
+                        <Switch>
+                            {routes.map((route, idx) => {
+                                return route.component ? (
+                                <Route
+                                    key={idx}
+                                    path={route.path}
+                                    exact={route.exact}
+                                    render={(props: any) => (
+                                        <route.component {...props} />
+                                    )} />
+                                ) : (null);
+                            })}
+                        </Switch>
+                    </HashRouter>
+                </div>
+            </Suspense>
         </div>
     )
 };

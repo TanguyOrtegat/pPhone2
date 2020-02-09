@@ -1,11 +1,11 @@
 .phone-header {
-    display: block;
-    // background-color: red;
     width: 100%;
 
     height: 17px;
     margin-top: 12px;
     font-family: "SFProTextSemibold";
+
+    z-index: 99;
 }
 
 .phone-header-right {

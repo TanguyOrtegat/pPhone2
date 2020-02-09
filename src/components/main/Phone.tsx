@@ -37,7 +37,7 @@ export const Phone: React.FC = (props: any) => {
             <Suspense fallback={loading()}>
                 <div className="phone-content">
                     <HeaderBar />
-                    <HashRouter>
+                    <HashRouter basename='/phone'>
                         <Switch>
                             {routes.map((route, idx) => {
                                 return route.component ? (

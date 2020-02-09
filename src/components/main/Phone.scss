@@ -40,9 +40,11 @@
 
 .app-container {
     width: 260px;
-    height: 570px;
-    position: relative;
+    height: 567px;
+    position: absolute;
 
-    overflow: hidden;
+    margin-top: -30px;
+
+    z-index: -1;
     color: black;
 }

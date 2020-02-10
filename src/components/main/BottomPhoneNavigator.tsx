@@ -1,11 +1,11 @@
 import React from "react";
 
-import './BottomPhoneNavigator.scss'
+import { ReactSVG } from 'react-svg'
 
-import home from './assets/home.png'
-import more from './assets/more.png'
-import back from './assets/back.png'
-import { RouteProps } from "react-router-dom";
+import './BottomPhoneNavigator.scss'
+import BackIcon from './assets/back.svg'
+import DotIcon from './assets/dot.svg'
+import AppIcon from './assets/app.svg'
 
 export const BottomPhoneNavigator: React.FC = (props: any) => {
     const goBack = () => {
@@ -20,13 +20,13 @@ export const BottomPhoneNavigator: React.FC = (props: any) => {
         <div className="bottom-phone-container">
             <div className="bottom-phone-button-container">
                 <div className="bottom-phone-button">
-                    <div className="bottom-phone-button-content">Apps</div>
+                    <ReactSVG src={`${AppIcon}`} fallback={() => <span>Error!</span>} className="bottom-phone-button-content" />
                 </div>
                 <div className="bottom-phone-button" onClick={goHome}>
-                    <div className="bottom-phone-button-content">Home</div>
+                    <ReactSVG src={`${DotIcon}`} fallback={() => <span>Error!</span>} className="bottom-phone-button-content" />
                 </div>
                 <div className="bottom-phone-button" onClick={goBack}>
-                    <div className="bottom-phone-button-content">Back</div>
+                    <ReactSVG src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="bottom-phone-button-content" />
                 </div>
             </div>
         </div>

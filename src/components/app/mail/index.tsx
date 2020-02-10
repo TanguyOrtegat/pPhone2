@@ -12,7 +12,7 @@ export interface IMailProps {
 
 const mailTestList: IMailProps[] = [
     { sender: 'John Doe', topic: 'My First Mail', date: 'Hier', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae leo dapibus, accumsan lorem eleifend, pharetra quam. Quisque vestibulum commodo justo, eleifend mollis enim blandit eu. Aenean hendrerit nisl et elit maximus finibus. Suspendisse scelerisque consectetur nisl mollis scelerisque.' },
-    { sender: 'David Doe', topic: 'My Second Mail', date: 'Vendredi', content: 'Bonjour John, j\'ai récuperer le colis que tu m\'as envoyé. Merci beaucoup, cordialement David Doe' },
+    { sender: 'David Doe', topic: 'My Second Mail', date: 'Vendredi', content: 'Bonjour John, j\'ai récuperé le colis que tu m\'as envoyé. Merci beaucoup, cordialement David Doe' },
  
 ]
 
@@ -21,7 +21,7 @@ const Mail: React.FC = () => {
         return mailTestList.map((props) => {
             return (
                 <div className="item-mail">
-                    <hr noshade/>
+                    <hr/>
                     <div className="item-mail-top">
                         <div id="mail-sender">{props.sender}</div>
                         <div id='mail-date'>{props.date}</div>

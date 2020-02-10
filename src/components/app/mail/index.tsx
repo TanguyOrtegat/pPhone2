@@ -21,7 +21,7 @@ const Mail: React.FC = () => {
         return mailTestList.map((props) => {
             return (
                 <div className="item-mail">
-                    <hr noshade/>
+                    <hr/>
                     <div className="item-mail-top">
                         <div id="mail-sender">{props.sender}</div>
                         <div id='mail-date'>{props.date}</div>

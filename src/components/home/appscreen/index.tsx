@@ -8,7 +8,7 @@ import { BottomAppNavigator } from "../../main/BottomAppNavigator";
 import background from '../../../assets/backgrounds/001.png'
 
 const applicationList: IAppItemProps[] = [
-    { name: 'Mail', icon: 'mail' },
+    { name: 'Mail', icon: 'mail', path: 'mail' },
     { name: 'Calendrier', icon: 'calendar' },
     { name: 'Galerie', icon: 'photos' },
     { name: "Camera", icon: 'camera', path: 'camera' },

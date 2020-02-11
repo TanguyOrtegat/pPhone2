@@ -1,9 +1,9 @@
 h1 {
-    margin-top: 25%;
+    margin-top: 3%;
     margin-left: 5%;
     font-size: 26px;
-    letter-spacing: -1px;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: -0.5px;
+    font-family: 'Segoe UI';
 }
 
 .searchIOS
@@ -20,7 +20,7 @@ h1 {
 
 .item-mail
 {
-    margin-left: 6%;
+    margin-left: 8%;
     margin-top: 4%;
 }
 
@@ -88,4 +88,79 @@ hr
 {
     margin-left: 6%;
     margin-top: 4%;
+}
+
+.mail-notification
+{
+    position: absolute;
+    margin-top: 23px;
+    margin-left: 8px;
+    background: #2c76d6;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+#mail-return
+{
+    color: #2c76d6;
+    margin-top: 15%;
+    margin-left: 7%;
+    font-size: 12px;
+}
+
+#mail-modify
+{
+    margin-top: 15%;
+    color: #397fda;
+    margin-right: 4%;
+    float: right;
+    font-size: 12px;
+}
+
+.arrow {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 18.2%;
+    color: #397fda;
+    margin-right: 15px;
+    position: absolute;
+    text-decoration: none;
+
+}
+.left{
+  -webkit-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+.arrow:before, .arrow:after {
+    border-right: 2px solid;
+    content: '';
+    display: block;
+    height: 9px;
+    margin-top: -6px;
+    position: absolute;
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    right: 10px;
+    top: 50%;
+    width: 0;
+}
+
+.arrow:after {
+    margin-top: -1px;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.arrow:hover, .arrow:focus,
+.arrow:hover:before, .arrow:hover:after,
+.arrow:focus:before, .arrow:focus:after {
+    color: #000;
 }

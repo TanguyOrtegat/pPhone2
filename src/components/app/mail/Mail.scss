@@ -118,7 +118,7 @@ hr
     font-size: 12px;
 }
 
-a {
+.arrow {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -135,7 +135,7 @@ a {
   transform:rotate(180deg);
 }
 
-a:before, a:after {
+.arrow:before, .arrow:after {
     border-right: 2px solid;
     content: '';
     display: block;
@@ -151,7 +151,7 @@ a:before, a:after {
     width: 0;
 }
 
-a:after {
+.arrow:after {
     margin-top: -1px;
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);

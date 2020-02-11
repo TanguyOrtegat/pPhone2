@@ -1,6 +1,7 @@
 import React from "react";
 
 import './Mail.scss'
+import { Link } from "react-router-dom";
 
 
 export interface IMailProps {
@@ -54,6 +55,11 @@ const Mail: React.FC = () => {
 
     return (
         <div className="app-container">
+            <div className="item-mail-top">
+                <a className="arrow left"></a>
+                <div id="mail-return">Boîtes</div>
+                <div id="mail-modify">Modifier</div>
+            </div>
             <h1>Réception</h1>
             <input type="text" className="searchIOS" placeholder="Rechercher"/>
             {getMail()}

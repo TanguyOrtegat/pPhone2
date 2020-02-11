@@ -13,8 +13,8 @@ export interface IMailProps {
 }
 
 const mailTestList: IMailProps[] = [
-    { sender: 'John Doe', topic: 'My First Mail', date: 'Hier', notification: true, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae leo dapibus, accumsan lorem eleifend, pharetra quam. Quisque vestibulum commodo justo, eleifend mollis enim blandit eu. Aenean hendrerit nisl et elit maximus finibus. Suspendisse scelerisque consectetur nisl mollis scelerisque.' },
-    { sender: 'David Doe', topic: 'My Second Mail', date: 'Vendredi', notification: false, content: 'Bonjour John, j\'ai récuperé le colis que tu m\'as envoyé. Merci beaucoup, cordialement David Doe' },
+    { sender: 'John Doe', topic: 'My First Mail', date: 'Yesterday', notification: true, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae leo dapibus, accumsan lorem eleifend, pharetra quam. Quisque vestibulum commodo justo, eleifend mollis enim blandit eu. Aenean hendrerit nisl et elit maximus finibus. Suspendisse scelerisque consectetur nisl mollis scelerisque.' },
+    { sender: 'David Doe', topic: 'My Second Mail', date: 'Friday', notification: false, content: 'Hello John, I got the package you sent me yesterday. Thank you for that, David.' },
  
 ]
 
@@ -57,11 +57,11 @@ const Mail: React.FC = () => {
         <div className="app-container">
             <div className="item-mail-top">
                 <a className="arrow left"></a>
-                <div id="mail-return">Boîtes</div>
-                <div id="mail-modify">Modifier</div>
+                <div id="mail-return">Personal</div>
+                <div id="mail-modify">Edit</div>
             </div>
-            <h1>Réception</h1>
-            <input type="text" className="searchIOS" placeholder="Rechercher"/>
+            <h1>Inbox</h1>
+            <input type="text" className="searchIOS" placeholder="Search"/>
             {getMail()}
             <hr id="mail-last"/>
         </div>

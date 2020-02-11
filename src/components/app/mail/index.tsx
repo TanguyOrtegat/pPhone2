@@ -22,7 +22,7 @@ const Mail: React.FC = () => {
         if (etat)
         {
             return (
-                <div className="circle"></div>
+                <div className="mail-notification"></div>
             )
         }
         else

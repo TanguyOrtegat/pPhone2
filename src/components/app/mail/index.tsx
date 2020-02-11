@@ -21,17 +21,9 @@ const mailTestList: IMailProps[] = [
 const Mail: React.FC = () => {
     const getNotification = (etat: boolean) => {
         if (etat)
-        {
-            return (
-                <div className="mail-notification"></div>
-            )
-        }
+            return (<div className="mail-notification"></div>)
         else
-        {
-            return (
-                <div></div>
-            )
-        }
+            return (<div></div>)
     }
 
     const getMail = () => {

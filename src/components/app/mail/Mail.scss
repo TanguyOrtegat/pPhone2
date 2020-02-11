@@ -159,8 +159,8 @@ hr
     transform: rotate(45deg);
 }
 
-a:hover, a:focus,
-a:hover:before, a:hover:after,
-a:focus:before, a:focus:after {
+.arrow:hover, .arrow:focus,
+.arrow:hover:before, .arrow:hover:after,
+.arrow:focus:before, .arrow:focus:after {
     color: #000;
 }

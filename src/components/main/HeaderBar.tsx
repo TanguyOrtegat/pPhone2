@@ -15,25 +15,29 @@ type ClockState = {
 }
   
 export class TimeActually extends React.Component<{}, ClockState> {
-  
-    tick() {
-      this.setState({
-        time: new Date()
-      });
-    }
-  
-    componentWillMount() {
-      this.tick();
-    }
-  
-    componentDidMount() {
-      setInterval(() => this.tick(), 1000);
-    }
-  
-    render() {
-      return <span className="phone-header-time">{this.state.time.getHours()}:{(this.state.time.getMinutes()<10?'0':'') + this.state.time.getMinutes()}</span>
-    }
+
+  constructor(props: any)
+  {
+    super(props);
+    this.state = {
+      time: new Date()
+    };
   }
+  
+  tick() {
+    this.setState({
+      time: new Date()
+    });
+  }
+
+  componentDidMount() {
+    setInterval(() => this.tick(), 1000);
+  }
+
+  render() {
+    return <span className="phone-header-time">{this.state.time.getHours()}:{(this.state.time.getMinutes()<10?'0':'') + this.state.time.getMinutes()}</span>
+  }
+}
 
 export const HeaderBar: React.FC = () => {
     return (

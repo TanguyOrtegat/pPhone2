@@ -31,7 +31,7 @@ export class TimeActually extends React.Component<{}, ClockState> {
     }
   
     render() {
-      return <span className="phone-header-time">{this.state.time.getHours()}:{this.state.time.getMinutes()}</span>
+      return <span className="phone-header-time">{this.state.time.getHours()}:{(this.state.time.getMinutes()<10?'0':'') + this.state.time.getMinutes()}</span>
     }
   }
 

@@ -8,20 +8,29 @@ h1 {
 
 .searchIOS
 {
-    background: url('../../../assets/icons/search-white.png') no-repeat 9px 54% #ecebebde;
+    background: url('../../../assets/icons/search-white.png') no-repeat 9px 55% #ecebebde;
     border: 1px solid #ffffff;
     font:  11px Arial,Helvetica,Sans-serif;
-    color: #b9b7b7;
+   
     width: 195px;
     margin-left: 5%;
     padding: 5px 8px 4px 30px;
     border-radius: 6px;
+    margin-bottom: 4%;
 }
+
+::placeholder {
+    font:  11px Arial,Helvetica,Sans-serif;
+    color: #b9b7b7;
+    opacity: 1; /* Firefox */
+  }
 
 .item-mail
 {
+    border-top: thin solid;
     margin-left: 8%;
-    margin-top: 4%;
+    cursor: pointer;
+    padding-bottom: 4%;
 }
 
 .item-mail-top > div
@@ -48,7 +57,6 @@ h1 {
     font-size: 12px;
     padding-right: 5%;
     color: rgb(143, 138, 138);
-    background: url('../../../assets/icons/ios-right-arrow.png') no-repeat 100% 4px;
 }
 
 #mail-arrow
@@ -104,39 +112,68 @@ hr
 #mail-return
 {
     color: #2c76d6;
-    margin-top: 15%;
+    margin-top: 5%;
     margin-left: 7%;
     font-size: 12px;
+    &:hover
+    {
+        cursor: pointer;
+    }
 }
 
 #mail-modify
 {
-    margin-top: 15%;
+    margin-top: 5%;
     color: #397fda;
     margin-right: 4%;
     float: right;
     font-size: 12px;
+    &:hover
+    {
+        cursor: pointer;
+    }
 }
 
 .arrow {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    margin-top: 18.2%;
+    margin-top: 7.2%;
     color: #397fda;
     margin-right: 15px;
     position: absolute;
     text-decoration: none;
-
+    &:hover
+    {
+        cursor: pointer;
+    }
 }
+
+
+.arrowDate {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: -11px;
+    color: rgb(143, 138, 138);
+    float: right;
+    margin-right: 3px;
+    position: relative;
+    text-decoration: none;
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
 .left{
   -webkit-transform:rotate(180deg);
   -ms-transform:rotate(180deg);
   transform:rotate(180deg);
 }
 
-.arrow:before, .arrow:after {
-    border-right: 2px solid;
+.arrow:before, .arrow:after, .arrowDate:before, .arrowDate:after {
+    border-right: 0.1rem solid;
     content: '';
     display: block;
     height: 9px;
@@ -151,7 +188,7 @@ hr
     width: 0;
 }
 
-.arrow:after {
+.arrow:after, .arrowDate:after {
     margin-top: -1px;
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -159,8 +196,9 @@ hr
     transform: rotate(45deg);
 }
 
-.arrow:hover, .arrow:focus,
-.arrow:hover:before, .arrow:hover:after,
-.arrow:focus:before, .arrow:focus:after {
-    color: #000;
+.mail-core {
+    
+    &:hover {
+        background-color: rgba(19, 12, 12, 0.050);
+    }
 }

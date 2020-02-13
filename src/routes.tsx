@@ -4,7 +4,7 @@ const AppScreen = React.lazy(() =>
     import  ('./components/home/appscreen/index'));
 const Camera = React.lazy(() =>
     import  ('./components/app/camera/index'));
-    const Mail = React.lazy(() =>
+const Mail = React.lazy(() =>
     import  ('./components/app/mail/index'));
 
 const routes = [

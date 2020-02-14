@@ -116,9 +116,10 @@ hr
     margin-left: 1.5%;
     font-size: 12px;
     padding: 5px 5px 5px 15px;
+    transition: 0.5s;
     &:hover {
         border-radius: 4px;
-        background-color: rgba(19, 12, 12, 0.050);
+        background-color: rgba(19, 12, 12, 0.070);
         cursor: pointer;
     }
 }
@@ -132,9 +133,10 @@ hr
     float: right;
     font-size: 12px;
     padding: 5px;
+    transition: 0.5s;
     &:hover {
         border-radius: 4px;
-        background-color: rgba(19, 12, 12, 0.050);
+        background-color: rgba(19, 12, 12, 0.070);
         cursor: pointer;
     }
 }
@@ -202,8 +204,8 @@ hr
 }
 
 .mail-core {
-    
+    transition: 0.4s;
     &:hover {
-        background-color: rgba(19, 12, 12, 0.050);
+        background-color: rgba(19, 12, 12, 0.060);
     }
 }

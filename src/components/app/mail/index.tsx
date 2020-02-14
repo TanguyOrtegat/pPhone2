@@ -18,6 +18,8 @@ const mailTestList: IMailProps[] = [
 ]
 
 const Mail: React.FC = (props: any) => {
+    let etatEdit = false;
+
     const getNotification = (etat: boolean) => {
         if (etat)
             return (<div className="mail-notification"></div>)
@@ -28,6 +30,34 @@ const Mail: React.FC = (props: any) => {
 
     const goHome = () => {
         props.history.push('/')
+    }
+
+    const edit = () => {
+        let elem: HTMLCollectionOf<Element> = document.getElementsByClassName('mail-core') as HTMLCollectionOf<Element>;
+        let last: HTMLElement = document.getElementById('lastDiv') as HTMLElement;
+        let notification: HTMLCollectionOf<Element> = document.getElementsByClassName('mail-notification') as HTMLCollectionOf<Element>;
+        if (etatEdit == false)
+        {
+            for (let item of elem) {
+                item.setAttribute("style", "padding-left: 20px;");
+            }
+            for (let item of notification) {
+                item.setAttribute("style", "opacity: 0; transition: 0.3s;");
+            }
+            last.setAttribute("style", "margin-left: 15%;");
+            etatEdit = true;
+        }
+        else
+        {
+            for (let item of elem) {
+                item.setAttribute("style", "padding-left: 0px;");
+            }
+            for (let item of notification) {
+                item.setAttribute("style", "opacity: 1; transition: 0.3s;");
+            }
+            last.setAttribute("style", "margin-left: 8%;");
+            etatEdit = false;
+        }
     }
 
     const getMail = () => {
@@ -56,12 +86,12 @@ const Mail: React.FC = (props: any) => {
             <div className="item-mail-top">
                 <a className="arrow left" onClick={goHome}></a>
                 <div id="mail-return" onClick={goHome}>Personal</div>
-                <div id="mail-modify">Edit</div>
+                <div id="mail-modify" onClick={edit}>Edit</div>
             </div>
             <h1>Inbox</h1>
-            <input type="text"  className="searchIOS" placeholder="Search"/>
+            <input type="text" className="searchIOS" placeholder="Search"/>
             {getMail()}
-            <div className="item-mail"></div>
+            <div className="item-mail" id='lastDiv'></div>
         </React.Fragment>
     )
 };

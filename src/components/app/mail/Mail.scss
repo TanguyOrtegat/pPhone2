@@ -4,6 +4,7 @@ h1 {
     font-size: 26px;
     letter-spacing: -0.5px;
     font-family: 'Segoe UI';
+    user-select: none;
 }
 
 .searchIOS
@@ -22,8 +23,9 @@ h1 {
 ::placeholder {
     font:  11px Arial,Helvetica,Sans-serif;
     color: #b9b7b7;
+    user-select: none;
     opacity: 1; /* Firefox */
-  }
+}
 
 .item-mail
 {
@@ -32,6 +34,11 @@ h1 {
     margin-left: 8%;
     cursor: pointer;
     padding-bottom: 4%;
+}
+
+.item-mail-top
+{
+    user-select: none;
 }
 
 .item-mail-top > div
@@ -206,6 +213,7 @@ hr
 
 .mail-core {
     transition: 0.4s;
+    user-select: none;
     &:hover {
         background-color: rgba(19, 12, 12, 0.060);
     }

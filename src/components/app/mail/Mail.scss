@@ -20,6 +20,10 @@ h1 {
     margin-bottom: 4%;
 }
 
+input:focus { 
+    outline: none !important;
+}
+
 ::placeholder {
     font:  11px Arial,Helvetica,Sans-serif;
     color: #b9b7b7;

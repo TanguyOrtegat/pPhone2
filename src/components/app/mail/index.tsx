@@ -29,6 +29,7 @@ const Mail: React.FC = (props: any) => {
 
 
     const goHome = () => {
+        etatEdit = false;
         props.history.push('/')
     }
 

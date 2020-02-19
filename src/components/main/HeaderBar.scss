@@ -1,9 +1,10 @@
 .phone-header {
-    background-color: black;
+    position: relative;
     width: 100%;
     user-select: none;
     padding-top: 12px;
     height: 17px;
+    z-index: 1;
     /*margin-top: 12px; */
     font-family: "SFProTextSemibold";
 

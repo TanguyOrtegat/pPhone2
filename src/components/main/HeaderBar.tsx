@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import './HeaderBar.scss'
 
@@ -10,40 +10,34 @@ import location from '../../assets/icons/location.png'
 // TODO: We need to do something dynamic for the color of the header, as if the background is too light
 // it would be hard to read the text and the icons, we also should switch to black when using a "light theme" app
 
-type ClockState = {
-    time: Date
-}
-  
-export class TimeActually extends React.Component<{}, ClockState> {
+const CurrentTime: React.FC = () => {
+  const [date, setDate] = useState(new Date());
+  let dateInterval: number;
 
-  constructor(props: any)
-  {
-    super(props);
-    this.state = {
-      time: new Date()
+  const updateDate = () => {
+    setDate(new Date());
+  }
+
+  useEffect(() => {
+    dateInterval = setInterval(updateDate, 10000)
+    return () => {
+      if (dateInterval)
+        clearInterval(dateInterval)
     };
-  }
-  
-  tick() {
-    this.setState({
-      time: new Date()
-    });
-  }
+  }, [])
 
-  componentDidMount() {
-    setInterval(() => this.tick(), 1000);
-  }
-
-  render() {
-    return <span className="phone-header-time">{this.state.time.getHours()}:{(this.state.time.getMinutes()<10?'0':'') + this.state.time.getMinutes()}</span>
-  }
+  return (
+    <span className="phone-header-time">
+      {date.getHours()}:{(date.getMinutes()<10 ? '0' : '') + date.getMinutes()}
+    </span>
+  )
 }
 
 export const HeaderBar: React.FC = () => {
     return (
         <div className="phone-header">
             <div className="phone-header-left">
-                <TimeActually/>
+                <CurrentTime />
                 <div className="phone-header-icon" style={{ backgroundImage: `url(${location})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
             </div>
 

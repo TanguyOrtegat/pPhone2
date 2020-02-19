@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from 'react-router-dom';
 
 import './HeaderBar.scss'
 
@@ -7,8 +8,7 @@ import wifi from '../../assets/icons/wifi.png'
 import service from '../../assets/icons/service.png'
 import location from '../../assets/icons/location.png'
 
-// TODO: We need to do something dynamic for the color of the header, as if the background is too light
-// it would be hard to read the text and the icons, we also should switch to black when using a "light theme" app
+// TODO: Switch icons to SVG to support colors.
 
 const CurrentTime: React.FC = () => {
   const [date, setDate] = useState(new Date());
@@ -33,9 +33,19 @@ const CurrentTime: React.FC = () => {
   )
 }
 
-export const HeaderBar: React.FC = () => {
+const HeaderBarComponent: React.FC = (props: any) => {
+    const { history } = props;
+    const [color, setColor] = useState("white");
+
+    useEffect(() => {
+      if (!history.location.pathname || history.location.pathname === "/")
+        setColor("white");
+      else
+        setColor("black")
+    }, [history.location.pathname])
+
     return (
-        <div className="phone-header">
+        <div className="phone-header" style={{ color: color }}>
             <div className="phone-header-left">
                 <CurrentTime />
                 <div className="phone-header-icon" style={{ backgroundImage: `url(${location})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
@@ -49,3 +59,5 @@ export const HeaderBar: React.FC = () => {
         </div>
     )
 };
+
+export const HeaderBar = withRouter(HeaderBarComponent);

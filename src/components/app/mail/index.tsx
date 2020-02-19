@@ -83,7 +83,7 @@ const Mail: React.FC = (props: any) => {
     }
 
     return (
-        <React.Fragment>
+        <div className="app-container">
             <div className="item-mail-top">
                 <a className="arrow left" onClick={goHome}></a>
                 <div id="mail-return" onClick={goHome}>Personal</div>
@@ -93,7 +93,7 @@ const Mail: React.FC = (props: any) => {
             <input type="text" className="searchIOS" placeholder="Search"/>
             {getMail()}
             <div className="item-mail" id='lastDiv'></div>
-        </React.Fragment>
+        </div>
     )
 };
 

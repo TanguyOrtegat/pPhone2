@@ -1,6 +1,12 @@
 import React from "react";
 
 import './Mail.scss'
+import HeaderApp from "../../utils/HeaderApp";
+import { ReactSVG } from "react-svg";
+import BackIcon from '../../../assets/icons/back.svg'
+
+// TODO:
+// Switch app-container to a new component that can takes color props
 
 export interface IMailProps {
     id?: string,
@@ -69,10 +75,12 @@ const Mail: React.FC = (props: any) => {
                         {getNotification(item.notification)}
                         <div className="item-mail">
                             <div className="item-mail-top">
-                                <div id="mail-sender">{item.sender}</div>
-                                <div id='mail-date'>{item.date}</div>
+                                <span id="mail-sender">{item.sender}</span>
+                                <div className="item-mail-top-right">
+                                    <span id='mail-date'>{item.date}</span>
+                                    <ReactSVG src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="item-mail-top-arrow" />
+                                </div>
                             </div>
-                            <a className="arrowDate"></a>
                             <div id="mail-topic">{item.topic}</div>
                             <div id="mail-content">{item.content}</div>
                         </div>
@@ -84,15 +92,8 @@ const Mail: React.FC = (props: any) => {
 
     return (
         <div className="app-container">
-            <div className="item-mail-top">
-                <a className="arrow left" onClick={goHome}></a>
-                <div id="mail-return" onClick={goHome}>Personal</div>
-                <div id="mail-modify" onClick={edit}>Edit</div>
-            </div>
-            <h1>Inbox</h1>
-            <input type="text" className="searchIOS" placeholder="Search"/>
+            <HeaderApp title="Inbox" leftText="Personal" rightText="Edit" onClickOnLeftText={() => {}} onClickOnRightText={edit} />
             {getMail()}
-            <div className="item-mail" id='lastDiv'></div>
         </div>
     )
 };

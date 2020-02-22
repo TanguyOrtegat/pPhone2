@@ -1,0 +1,56 @@
+.header-app {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px 5px 5px 0px;
+    border-bottom: thin solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-app > div {
+    display: inline-block;
+}
+
+.header-app-arrow {
+    width: 8px;
+    height: 4px;
+
+    padding-left: 7px;
+    padding-bottom: 10px;
+
+    &:hover {
+        border-radius: 4px;
+        background-color: rgba(19, 12, 12, 0.070);
+    }
+}
+
+.header-app-left-text {
+    padding: 5px;
+    transition: 0.5s;
+    
+    &:hover {
+        border-radius: 4px;
+        background-color: rgba(19, 12, 12, 0.070);
+    }
+}
+
+.header-app-title {
+    position: absolute; 
+    left: 0; 
+    right: 0;
+
+    padding-top: 5px;
+
+    left: 45%;
+}
+
+.header-app-right-text {
+    float: right;
+    font-size: 12px;
+    transition: 0.5s;
+    padding: 5px 15px 5px 5px;
+
+    &:hover {
+        border-radius: 4px;
+        background-color: rgba(19, 12, 12, 0.070);
+    }
+}

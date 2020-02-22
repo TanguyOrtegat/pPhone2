@@ -1,7 +1,6 @@
 {
   "name": "pphone",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "node-sass": "^4.13.1",
     "prettier": "^1.18.2",

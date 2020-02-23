@@ -58,8 +58,11 @@
 .item-mail-top-arrow {
     display: inline-block;
     width: 8px;
-    height: 8px;
+    height: 16px;
+
     padding-left: 3px;
+
+    overflow: hidden;
     fill: rgb(143, 138, 138);
 }
 

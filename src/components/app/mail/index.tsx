@@ -3,7 +3,7 @@ import React from "react";
 import './Mail.scss'
 import HeaderApp from "../../utils/HeaderApp";
 import { ReactSVG } from "react-svg";
-import BackIcon from '../../../assets/icons/back.svg'
+import BackIcon from '../../../assets/icons/back_right.svg'
 
 // TODO:
 // Switch app-container to a new component that can takes color props
@@ -78,7 +78,7 @@ const Mail: React.FC = (props: any) => {
                                 <span id="mail-sender">{item.sender}</span>
                                 <div className="item-mail-top-right">
                                     <span id='mail-date'>{item.date}</span>
-                                    <ReactSVG src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="item-mail-top-arrow" />
+                                    <ReactSVG beforeInjection={(svg) => { svg.setAttribute('width', '8px'); svg.setAttribute('height', '8px') }} src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="item-mail-top-arrow" />
                                 </div>
                             </div>
                             <div id="mail-topic">{item.topic}</div>

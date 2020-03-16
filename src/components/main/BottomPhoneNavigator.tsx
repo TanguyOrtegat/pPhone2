@@ -3,9 +3,9 @@ import React from "react";
 import { ReactSVG } from 'react-svg'
 
 import './BottomPhoneNavigator.scss'
-import BackIcon from './assets/back.svg'
-import DotIcon from './assets/dot.svg'
-import AppIcon from './assets/app.svg'
+import BackIcon from '../../assets/icons/back.svg'
+import DotIcon from '../../assets/icons/dot.svg'
+import AppIcon from '../../assets/icons/app.svg'
 
 export const BottomPhoneNavigator: React.FC = (props: any) => {
     const goBack = () => {

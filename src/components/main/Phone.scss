@@ -1,49 +1,117 @@
 .phone-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
-    width: 300px;
-    height: 600px;
+  width: 300px;
+  height: 600px;
 
-    margin-bottom: 10px;
-    margin-right: 8px;
+  margin-bottom: 10px;
+  margin-right: 8px;
 
-    font-family: 'SFProTextRegular';
+  font-family: "SFProTextRegular";
 }
 
 .phone-content {
-    width: 260px;
-    height: 547px;
+  width: 260px;
+  height: 547px;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    margin-left: 20px;
-    margin-top: 15px;
+  margin-left: 20px;
+  margin-top: 15px;
+  background-size: cover;
 }
 
 .test-bg {
-    background-image: url('https://i.imgur.com/aI8fEEZ.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("https://i.imgur.com/aI8fEEZ.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    display: none;
+  display: none;
 
-    width: 275px;
-    height: 600px;
-    position: absolute;
+  width: 275px;
+  height: 600px;
+  position: absolute;
 
-    right: -3px;
-    left: 2px;
+  right: -3px;
+  left: 2px;
 }
 
 .app-container {
-    width: 260px;
-    height: 555px;
-    position: absolute;
+  width: 260px;
+  height: 555px;
+  position: absolute;
 
-    margin-top: -30px;
+  margin-top: -30px;
+  padding-top: 20px;
 
-    z-index: -1;
-    color: black;
+  color: black;
+
+  background-color: white;
+
+  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  // Todo :(
+  &.exit {
+    -webkit-animation: scale-out-center 0.3s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-out-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation scale-in-center for app
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
 }

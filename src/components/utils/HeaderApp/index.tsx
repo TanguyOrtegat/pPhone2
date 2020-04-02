@@ -28,11 +28,16 @@ const HeaderApp: React.FC<IHeaderAppProps> = (props: IHeaderAppProps) => {
 
     return (
         <div className="header-app" style={{ color: headerColor }}>
-            <ReactSVG onClick={props.onClickOnArrow || goBack} src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="header-app-arrow" style={{ fill: headerColor }} />
-            {props.onClickOnLeftText && props.leftText && <div className="header-app-left-text" onClick={props.onClickOnLeftText}>{props.leftText}</div>}
+            <div className="header-app-left">
+                <ReactSVG onClick={props.onClickOnArrow || goBack} src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="header-app-arrow" style={{ fill: headerColor }} />
+                {props.onClickOnLeftText && props.leftText && <div className="header-app-left-text" onClick={props.onClickOnLeftText}>{props.leftText}</div>}
+            </div>
 
             {props.title && <span className="header-app-title" style={{ color: titleColor }}>{props.title}</span>}
-            <div className="header-app-right-text" onClick={props.onClickOnRightText}>{props.rightText}</div>
+
+            <div className="header-app-right">
+                <div className="header-app-right-text" onClick={props.onClickOnRightText}>{props.rightText}</div>
+            </div>
         </div>
     )
 }

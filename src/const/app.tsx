@@ -26,5 +26,5 @@ export const bottomApplicationList: IAppItemProps[] = [
     { name: 'Téléphone', icon: 'call' },
     { name: 'Messages', icon: 'messages', path: 'messages' },
     { name: 'Mail', icon: 'mail', path: 'mail' },
-    { name: 'Notes', icon: 'notes' },
+    { name: 'Notes', icon: 'notes', path: 'notes' },
 ]

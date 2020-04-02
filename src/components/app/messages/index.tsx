@@ -28,7 +28,7 @@ const Messages: React.FC = (props: any) => {
         return mailTestList.map((item, k) => {
             return (
                 <React.Fragment key={k}>
-                    <Message mail={item} edit={edit} />
+                    <Message title={item.sender} date={item.date} notification={item.notification} content={item.content} edit={edit} />
                 </React.Fragment>
             )
         })

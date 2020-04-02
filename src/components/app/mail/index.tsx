@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import './Mail.scss'
 import HeaderApp from "../../utils/HeaderApp";
-import { ReactSVG } from "react-svg";
-import BackIcon from '../../../assets/icons/back_right.svg'
+import Message from "./MessageItem";
 
 // TODO:
 // Switch app-container to a new component that can takes color props
@@ -14,7 +13,8 @@ export interface IMailProps {
     topic?: string,
     date?: string,
     notification: boolean,
-    content?: string
+    content?: string,
+    edit?: boolean
 }
 
 const mailTestList: IMailProps[] = [
@@ -24,67 +24,13 @@ const mailTestList: IMailProps[] = [
 ]
 
 const Mail: React.FC = (props: any) => {
-    let etatEdit = false;
-
-    const getNotification = (etat: boolean) => {
-        if (etat)
-            return (<div className="mail-notification"></div>)
-        else
-            return (<div></div>)
-    }
-
-
-    const goHome = () => {
-        etatEdit = false;
-        props.history.push('/')
-    }
-
-    const edit = () => {
-        let elem: HTMLCollectionOf<Element> = document.getElementsByClassName('mail-core') as HTMLCollectionOf<Element>;
-        let last: HTMLElement = document.getElementById('lastDiv') as HTMLElement;
-        let notification: HTMLCollectionOf<Element> = document.getElementsByClassName('mail-notification') as HTMLCollectionOf<Element>;
-        if (etatEdit == false)
-        {
-            for (let item of elem) {
-                item.setAttribute("style", "padding-left: 20px;");
-            }
-            for (let item of notification) {
-                item.setAttribute("style", "opacity: 0; transition: 0.3s;");
-            }
-            last.setAttribute("style", "margin-left: 15%;");
-            etatEdit = true;
-        }
-        else
-        {
-            for (let item of elem) {
-                item.setAttribute("style", "padding-left: 0px;");
-            }
-            for (let item of notification) {
-                item.setAttribute("style", "opacity: 1; transition: 0.3s;");
-            }
-            last.setAttribute("style", "margin-left: 8%;");
-            etatEdit = false;
-        }
-    }
+    const [edit, setEdit] = useState(false);
 
     const getMail = () => {
         return mailTestList.map((item) => {
             return (
                 <React.Fragment key={item.id}>
-                    <div className="mail-core">
-                        {getNotification(item.notification)}
-                        <div className="item-mail">
-                            <div className="item-mail-top">
-                                <span id="mail-sender">{item.sender}</span>
-                                <div className="item-mail-top-right">
-                                    <span id='mail-date'>{item.date}</span>
-                                    <ReactSVG beforeInjection={(svg) => { svg.setAttribute('width', '8px'); svg.setAttribute('height', '8px') }} src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="item-mail-top-arrow" />
-                                </div>
-                            </div>
-                            <div id="mail-topic">{item.topic}</div>
-                            <div id="mail-content">{item.content}</div>
-                        </div>
-                    </div>
+                    <Message {...item} edit={edit} />
                 </React.Fragment>
             )
         })
@@ -92,7 +38,7 @@ const Mail: React.FC = (props: any) => {
 
     return (
         <div className="app-container">
-            <HeaderApp title="Inbox" leftText="Personal" rightText="Edit" onClickOnLeftText={() => {}} onClickOnRightText={edit} />
+            <HeaderApp title="Inbox" leftText="Personal" rightText="Edit" onClickOnLeftText={() => setEdit(!edit)} onClickOnRightText={() => {}} />
             {getMail()}
         </div>
     )

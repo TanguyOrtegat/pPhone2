@@ -9,9 +9,9 @@ export interface IHeaderAppProps extends RouteComponentProps {
     onClickOnArrow?: (args0: any) => void,
 
     onClickOnLeftText?: (args0: any) => void,
-    onClickOnRightText: (args0: any) => void,
+    onClickOnRightText?: (args0: any) => void,
     leftText?: string,
-    rightText: string,
+    rightText?: string,
     color?: string,
 
     title?: string,
@@ -36,7 +36,7 @@ const HeaderApp: React.FC<IHeaderAppProps> = (props: IHeaderAppProps) => {
             {props.title && <span className="header-app-title" style={{ color: titleColor }}>{props.title}</span>}
 
             <div className="header-app-right">
-                <div className="header-app-right-text" onClick={props.onClickOnRightText}>{props.rightText}</div>
+                {props.onClickOnRightText && props.rightText && <div className="header-app-right-text" onClick={props.onClickOnRightText}>{props.rightText}</div>}
             </div>
         </div>
     )

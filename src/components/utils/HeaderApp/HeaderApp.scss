@@ -32,12 +32,13 @@
     flex: 1;
     float: left;
     text-align: left;
+    padding-top: 5px;
 }
 
 .header-app-left-text {
     display: inline-block;
     transition: 0.5s;
-    padding: 5px 15px 5px 5px;
+    padding: 0px 15px 5px 5px;
 
     &:hover {
         border-radius: 4px;

@@ -5,8 +5,6 @@ import './AppScreen.scss'
 import { AppItem, IAppItemProps } from "../appitem";
 import { BottomAppNavigator } from "../../main/BottomAppNavigator";
 
-import background from '../../../assets/backgrounds/001.png'
-
 const applicationList: IAppItemProps[] = [
     { name: 'Mail', icon: 'mail', path: 'mail' },
     { name: 'Calendrier', icon: 'calendar' },
@@ -37,7 +35,7 @@ const AppScreen: React.FC = () => {
     }
 
     return (
-        <div className="app-screen-background" style={{ backgroundImage: `url(${background})` }}>
+        <div className="app-screen-background">
             <div className="app-screen">
                 <div className="app-screen-container">
                     {getApplications()}

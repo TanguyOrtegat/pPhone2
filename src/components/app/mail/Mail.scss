@@ -1,35 +1,4 @@
-
-.item-mail-top {
-    display: block;
-    width: 100%;
-}
-
-.item-mail-top-right {
-    float: right;
-    padding-right: 10px;
-}
-
-.item-mail-top-arrow {
-    display: inline-block;
-    width: 8px;
-    height: 16px;
-
-    padding-left: 3px;
-
-    overflow: hidden;
-    fill: rgb(143, 138, 138);
-}
-
-#mail-date {
-    display: inline-block;
-    font-family: 'Segoe UI';
-    letter-spacing: -0.5px;
-    font-size: 12px;
-    color: rgb(143, 138, 138);
-}
-
-.left{
-  -webkit-transform:rotate(180deg);
-  -ms-transform:rotate(180deg);
-  transform:rotate(180deg);
+.mail-box {
+  height: calc(100% - 64px);
+  overflow-y: scroll;
 }

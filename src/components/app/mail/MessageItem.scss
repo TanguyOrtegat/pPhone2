@@ -3,7 +3,6 @@
     border-color: rgba(0, 0, 0, 0.1);
 
     transition: 0.4s;
-    margin-left: 8%;
     cursor: pointer;
 
     padding-bottom: 10px;
@@ -11,7 +10,7 @@
 }
 #mail-sender {
     padding-top: 5px;
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Segoe UI';
     font-weight: bold;
 }
@@ -32,21 +31,6 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; 
-}
-
-.mail-notification {
-    position: absolute;
-    margin-top: 14px;
-    margin-left: 6px;
-    background: #2c76d6;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    transition: 0.3s;
-
-    &.edit {
-        opacity: 0;
-    }
 }
 
 .item-mail-top {
@@ -109,6 +93,7 @@
 }
 
 .mail-core {
+    display: flex;
     transition: 0.4s;
     user-select: none;
     transition: 0.3s;
@@ -119,5 +104,29 @@
 
     &.edit {
         padding-left: 20px;
+    }
+}
+
+.mail-core > * {
+    display: inline-block;
+}
+
+.notif-container {
+    display: flex;
+    min-width: 16px;
+    justify-content: center;
+    padding-top: 14px;
+}
+
+.mail-notification {
+    display: inline-flex;
+    background: #2c76d6;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: 0.3s;
+
+    &.edit {
+        opacity: 0;
     }
 }

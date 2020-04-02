@@ -6,13 +6,11 @@ import BackIcon from '../../../assets/icons/back_right.svg'
 import { IMailProps } from ".";
 
 const Message: React.FC<IMailProps> = (props: IMailProps) => {
-  const getNotification = (newMessage: boolean) => {
-    if (newMessage) return <div className={`mail-notification ${props.edit ? "edit" : ""}`}></div>;
-  };
-
   return (
     <div className={`mail-core ${props.edit ? "edit" : ""}`}>
-      {getNotification(props.notification)}
+        <div className="notif-container">
+            {props.notification ? <div className={`mail-notification ${props.edit ? "edit" : ""}`}></div> : false}
+        </div>
       <div className="item-mail">
         <div className="item-mail-top">
           <span id="mail-sender">{props.sender}</span>

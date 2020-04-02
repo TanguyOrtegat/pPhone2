@@ -10,6 +10,8 @@ const Messages = React.lazy(() =>
     import  ('./components/app/messages/index'));
 const Notes = React.lazy(() =>
     import  ('./components/app/notes/index'));
+const Bank = React.lazy(() =>
+    import  ('./components/app/bank/index'));
 
 const routes = [
     { path: '/', exact: true, component: AppScreen },
@@ -17,6 +19,7 @@ const routes = [
     { path: '/app/mail', exact: true, component: Mail },
     { path: '/app/messages', exact: true, component: Messages },
     { path: '/app/notes', exact: true, component: Notes },
+    { path: '/app/bank', exact: true, component: Bank },
 ]
 
 export default routes;

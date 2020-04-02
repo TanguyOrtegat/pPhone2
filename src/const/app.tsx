@@ -12,7 +12,7 @@ export const applicationList: IAppItemProps[] = [
     //{ name: 'Home', icon: 'home' },
     //{ name: 'Notes', icon: 'notes' },
     //{ name: 'Stocks', icon: 'stocks' },
-    { name: 'Banque', icon: 'wallet' },
+    { name: 'Banque', icon: 'wallet', path: 'Bank' },
     //{ name: 'Workspace', icon: 'workspace' },
     { name: 'App Store', icon: 'appstore' },
     //{ name: 'Health', icon: 'health' },

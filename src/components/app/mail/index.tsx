@@ -30,7 +30,7 @@ const Mail: React.FC = (props: any) => {
         return mailTestList.map((item) => {
             return (
                 <React.Fragment key={item.id}>
-                    <Message {...item} edit={edit} />
+                    <Message mail={item} edit={edit} />
                 </React.Fragment>
             )
         })

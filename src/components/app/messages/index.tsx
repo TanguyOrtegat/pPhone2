@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import './Messages.scss'
 import './../mail/Mail.scss'
 import HeaderApp from "../../utils/HeaderApp";
-import { ReactSVG } from "react-svg";
-import BackIcon from '../../../assets/icons/back_right.svg'
 import Message from "../mail/MessageItem";
 import { IMailProps } from "../mail";
 
@@ -30,7 +28,7 @@ const Messages: React.FC = (props: any) => {
         return mailTestList.map((item, k) => {
             return (
                 <React.Fragment key={k}>
-                    <Message {...item} edit={edit} />
+                    <Message mail={item} edit={edit} />
                 </React.Fragment>
             )
         })

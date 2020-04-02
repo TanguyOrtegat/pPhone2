@@ -3,10 +3,13 @@ import React from "react";
 import './MessageItem.scss'
 import { ReactSVG } from "react-svg";
 import BackIcon from '../../../assets/icons/back_right.svg'
-import { IMailProps } from ".";
 
 interface IMessage {
-  mail: IMailProps,
+  title: string,
+  content: string,
+  notification?: boolean,
+  date?: string,
+  topic?: string,
   edit?: boolean,
   onClick?: Function,
 }
@@ -15,13 +18,13 @@ const Message: React.FC<IMessage> = (props: IMessage) => {
   return (
     <div className={`mail-core ${props.edit ? "edit" : ""}`}>
         <div className="notif-container">
-            {props.mail.notification ? <div className={`mail-notification ${props.edit ? "edit" : ""}`}></div> : false}
+            {props.notification ? <div className={`mail-notification ${props.edit ? "edit" : ""}`}></div> : false}
         </div>
       <div className="item-mail">
         <div className="item-mail-top">
-          <span id="mail-sender">{props.mail.sender}</span>
+          {props.title ? <span id="mail-sender">{props.title}</span> : false}
           <div className="item-mail-top-right">
-            <span id="mail-date">{props.mail.date}</span>
+            {props.date ? <span id="mail-date">{props.date}</span> : false}
             <ReactSVG
               beforeInjection={svg => {
                 svg.setAttribute("width", "8px");
@@ -33,8 +36,8 @@ const Message: React.FC<IMessage> = (props: IMessage) => {
             />
           </div>
         </div>
-        {props.mail.topic ? <div id="mail-topic">{props.mail.topic}</div> : false }
-        <div id="mail-content">{props.mail.content}</div>
+        {props.topic ? <div id="mail-topic">{props.topic}</div> : false }
+        <div id="mail-content">{props.content}</div>
       </div>
     </div>
   );

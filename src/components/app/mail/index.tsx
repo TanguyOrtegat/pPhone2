@@ -9,11 +9,11 @@ import Message from "./MessageItem";
 
 export interface IMailProps {
     id?: string,
-    sender?: string,
+    sender: string,
     topic?: string,
     date?: string,
     notification: boolean,
-    content?: string,
+    content: string,
     edit?: boolean
 }
 
@@ -30,7 +30,7 @@ const Mail: React.FC = (props: any) => {
         return mailTestList.map((item) => {
             return (
                 <React.Fragment key={item.id}>
-                    <Message mail={item} edit={edit} />
+                    <Message title={item.sender} topic={item.topic} date={item.date} notification={item.notification} content={item.content} edit={edit} />
                 </React.Fragment>
             )
         })

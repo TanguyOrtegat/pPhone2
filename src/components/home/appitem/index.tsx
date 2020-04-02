@@ -26,6 +26,7 @@ import FacebookIcon from '../../../assets/icons/facebook.png'
 import InstagramIcon from '../../../assets/icons/instagram.png'
 import MessagesIcon from '../../../assets/icons/messages.png'
 import MessengerIcon from '../../../assets/icons/messenger.png'
+import CallIcon from '../../../assets/icons/call.png'
 import { Link } from "react-router-dom";
 
 const iconList = {
@@ -52,6 +53,7 @@ const iconList = {
     'instagram': InstagramIcon,
     'messages': MessagesIcon,
     'messenger': MessengerIcon,
+    'call': CallIcon
 }
 
 export interface IAppItemProps {

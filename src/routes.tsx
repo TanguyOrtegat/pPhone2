@@ -18,7 +18,7 @@ const routes = [
     { path: '/app/camera', exact: true, component: Camera },
     { path: '/app/mail', exact: true, component: Mail },
     { path: '/app/messages', exact: true, component: Messages },
-    { path: '/app/notes', exact: true, component: Notes },
+    { path: '/app/notes', component: Notes },
     { path: '/app/bank', exact: true, component: Bank },
 ]
 

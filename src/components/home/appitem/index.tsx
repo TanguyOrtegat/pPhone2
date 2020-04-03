@@ -63,8 +63,10 @@ export interface IAppItemProps {
 }
 
 export const AppItem: React.FC<IAppItemProps> = (props: IAppItemProps) => {
+    const appPath = props.path ? `app/${props.path}` : ""
+
     return (
-        <Link to={props.path ? `app/${props.path}` : ""} className="app-icon">
+        <Link to={appPath} className="app-icon">
             <div className="app-icon-image" style={{ backgroundImage: `url(${iconList[props.icon]})` }} />
             {props.name && <span className="app-text">{props.name}</span>}
         </Link>

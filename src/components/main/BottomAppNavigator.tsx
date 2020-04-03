@@ -6,8 +6,8 @@ import { bottomApplicationList } from "../../const/app";
 
 export const BottomAppNavigator: React.FC = () => {
     const getApplications = () => {
-        return bottomApplicationList.map((e) => {
-            return <AppItem icon={e.icon} path={e.path} />
+        return bottomApplicationList.map((e, key) => {
+            return <AppItem key={key} icon={e.icon} path={e.path} />
         })
     }
 

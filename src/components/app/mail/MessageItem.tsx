@@ -4,19 +4,20 @@ import './MessageItem.scss'
 import { ReactSVG } from "react-svg";
 import BackIcon from '../../../assets/icons/back_right.svg'
 
-interface IMessage {
+export interface IMessage {
+  id: number,
   title: string,
   content: string,
   notification?: boolean,
   date?: string,
   topic?: string,
   edit?: boolean,
-  onClick?: Function,
+  onClick?: ((event: React.MouseEvent<HTMLDivElement, MouseEvent>, props: IMessage) => void) | undefined,
 }
 
 const Message: React.FC<IMessage> = (props: IMessage) => {
   return (
-    <div className={`mail-core ${props.edit ? "edit" : ""}`}>
+    <div className={`mail-core ${props.edit ? "edit" : ""}`} onClick={(event) => { if (props.onClick) props.onClick(event, props) }}>
         <div className="notif-container">
             {props.notification ? <div className={`mail-notification ${props.edit ? "edit" : ""}`}></div> : false}
         </div>

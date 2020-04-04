@@ -47,34 +47,18 @@
   left: 2px;
 }
 
-.app-container {
-  width: 260px;
-  height: 555px;
-  position: absolute;
-  overflow: hidden;
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
 
-  margin-top: -30px;
-  padding-top: 20px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 
-  color: black;
-
-  background-color: white;
-
-  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: scale-in-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-
-  // Todo :(
-  &.exit {
-    -webkit-animation: scale-out-center 0.3s
-      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: scale-out-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
+  resize: none; /*remove the resize handle on the bottom right*/
 }
 
-.app-container * {
-  color: inherit;
-}
 /**
  * ----------------------------------------
  * animation scale-in-center for app

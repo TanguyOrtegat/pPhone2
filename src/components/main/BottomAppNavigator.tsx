@@ -2,16 +2,20 @@ import React from "react";
 
 import './BottomAppNavigator.scss'
 import { AppItem } from "../home/appitem";
+import { bottomApplicationList } from "../../const/app";
 
 export const BottomAppNavigator: React.FC = () => {
+    const getApplications = () => {
+        return bottomApplicationList.map((e, key) => {
+            return <AppItem key={key} icon={e.icon} path={e.path} />
+        })
+    }
+
     return (
         <div className="bottom-nav-container">
             <div className="bottom-nav-list">
                 <div className="bottom-nav-list-container">
-                    <AppItem icon='facebook'/>
-                    <AppItem icon='instagram'/>
-                    <AppItem icon='messages'/>
-                    <AppItem icon='messenger'/>
+                    {getApplications()}
                 </div>
             </div>
         </div>

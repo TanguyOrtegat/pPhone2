@@ -2,30 +2,9 @@ import React from "react";
 
 import './AppScreen.scss'
 
-import { AppItem, IAppItemProps } from "../appitem";
+import { AppItem } from "../appitem";
 import { BottomAppNavigator } from "../../main/BottomAppNavigator";
-
-const applicationList: IAppItemProps[] = [
-    { name: 'Mail', icon: 'mail', path: 'mail' },
-    { name: 'Calendrier', icon: 'calendar' },
-    { name: 'Galerie', icon: 'photos' },
-    { name: "Camera", icon: 'camera', path: 'camera' },
-    { name: 'Maps', icon: 'map' },
-    { name: 'Horloge', icon: 'clock' },
-    { name: 'Météo', icon: 'weather' },
-    { name: 'News', icon: 'news' },
-    { name: 'Home', icon: 'home' },
-    { name: 'Notes', icon: 'notes' },
-    { name: 'Stocks', icon: 'stocks' },
-    { name: 'Wallet', icon: 'wallet' },
-    { name: 'Workspace', icon: 'workspace' },
-    { name: 'App Store', icon: 'appstore' },
-    { name: 'Health', icon: 'health' },
-    { name: 'iBooks', icon: 'ibooks' },
-    { name: 'WhatsApp', icon: 'whatsapp' },
-    { name: 'Local', icon: 'local' },
-    { name: 'Réglages', icon: 'settings' },
-]
+import { applicationList } from "../../../const/app";
 
 const AppScreen: React.FC = () => {
     const getApplications = () => {

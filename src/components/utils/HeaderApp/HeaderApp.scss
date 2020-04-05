@@ -1,9 +1,11 @@
 .header-app {
+    display: flex;
     width: 100%;
     font-size: 12px;
     padding: 10px 5px 5px 0px;
     border-bottom: thin solid;
     border-color: rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
 .header-app > div {
@@ -11,10 +13,13 @@
 }
 
 .header-app-arrow {
+    text-align: center;
+    display: inline-block;
     width: 8px;
     height: 4px;
 
-    padding-left: 7px;
+    padding-left: 5px;
+    padding-right: 4px;
     padding-bottom: 10px;
 
     &:hover {
@@ -23,10 +28,18 @@
     }
 }
 
+.header-app-left {
+    flex: 1;
+    float: left;
+    text-align: left;
+    padding-top: 5px;
+}
+
 .header-app-left-text {
-    padding: 5px;
+    display: inline-block;
     transition: 0.5s;
-    
+    padding: 0px 15px 5px 5px;
+
     &:hover {
         border-radius: 4px;
         background-color: rgba(19, 12, 12, 0.070);
@@ -34,19 +47,24 @@
 }
 
 .header-app-title {
-    position: absolute; 
+    flex: 1;
     left: 0; 
     right: 0;
 
     padding-top: 5px;
+    text-align: center;
+}
 
-    left: 45%;
+.header-app-right {
+    flex: 1;
+    float: right;
+    text-align: right;
+    transition: 0.5s;
 }
 
 .header-app-right-text {
-    float: right;
+    display: inline-block;
     font-size: 12px;
-    transition: 0.5s;
     padding: 5px 15px 5px 5px;
 
     &:hover {

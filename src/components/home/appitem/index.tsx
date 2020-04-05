@@ -26,6 +26,7 @@ import FacebookIcon from '../../../assets/icons/facebook.png'
 import InstagramIcon from '../../../assets/icons/instagram.png'
 import MessagesIcon from '../../../assets/icons/messages.png'
 import MessengerIcon from '../../../assets/icons/messenger.png'
+import CallIcon from '../../../assets/icons/call.png'
 import { Link } from "react-router-dom";
 
 const iconList = {
@@ -52,6 +53,7 @@ const iconList = {
     'instagram': InstagramIcon,
     'messages': MessagesIcon,
     'messenger': MessengerIcon,
+    'call': CallIcon
 }
 
 export interface IAppItemProps {
@@ -61,14 +63,10 @@ export interface IAppItemProps {
 }
 
 export const AppItem: React.FC<IAppItemProps> = (props: IAppItemProps) => {
-    const goToApp = () => {
-
-    }
-
-    console.log(props.path)
+    const appPath = props.path ? `app/${props.path}` : ""
 
     return (
-        <Link to={props.path ? `app/${props.path}` : ""} className="app-icon" onClick={goToApp}>
+        <Link to={appPath} className="app-icon">
             <div className="app-icon-image" style={{ backgroundImage: `url(${iconList[props.icon]})` }} />
             {props.name && <span className="app-text">{props.name}</span>}
         </Link>

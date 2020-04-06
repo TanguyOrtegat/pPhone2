@@ -1,0 +1,93 @@
+
+.messages-wrapper {
+    padding-top: 10px;
+    position: relative;
+
+
+}
+
+.send-container {
+    position: fixed;
+    background-color: #f6f6f6;
+    border: 1px solid #dcdcdc;
+    bottom: 25px;
+    padding: 10px;
+   padding-right:80px;
+}
+.send-input {
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    padding: 5px 5px;
+    font-size: 1em;
+    width: 100%;
+}
+.send-btn {
+    position: absolute;
+    text-decoration: none;
+    color: #939297;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    font-size: 0.8em;
+    cursor: pointer;
+    top:18px;
+    right:1px;
+    &:hover {
+        color :#397fda
+    }
+}
+.message {
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 10px 10px;
+    padding: 15px 15px;
+    position: relative;
+}
+.message.to {
+    background-color: #2095FE;
+    color: #fff;
+    margin-left: 80px;
+}
+.message.from {
+    background-color: #E5E4E9;
+    color: #363636;
+    margin-right: 80px;
+}
+.message.to + .message.to,
+.message.from + .message.from {
+    margin-top: -7px;
+}
+.message:before {
+    border-color: #2095FE;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 0 20px;
+    bottom: 0;
+    clip: rect(20px, 35px, 42px, 0px);
+    content: " ";
+    height: 40px;
+    position: absolute;
+    right: -50px;
+    width: 50px;
+    z-index: -1;
+}
+.message.from:before {
+    border-color: #E5E4E9;
+    left: -50px;
+    transform: rotateY(180deg);
+}
+.app-container {
+    height: 34.5em;
+    overflow-y: scroll; /* Add the ability to scroll */
+}
+
+
+.app-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.app-container {
+    -ms-overflow-style: none;
+    text-decoration: none !important;
+}

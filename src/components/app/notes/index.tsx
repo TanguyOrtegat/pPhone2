@@ -13,16 +13,20 @@ interface INote {
 }
 
 const defaultNotes: INote[] = [
-    { id: 0, title: "Position drogue", content: "X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson." }
+    { id: 0, title: "Position drogue", content: "X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson.X: 0.0 Y: 5462.0 - Direction Sandy Shore, caché dans un buisson." }
 ]
 
 const NotePage: React.FC<any> = () => {
     let { id } = useParams();
     let note = defaultNotes[Number(id)]
+    if (!note) {
+        // create last_id
+        note = { id: 1, title: "New file", content: "Your note" }
+    }
 
     return (
         <div className="note-write-container">
-            <textarea className="note-write-input" />
+            <textarea className="note-write-input" value={note.content} />
         </div>        
     )
 }
@@ -45,13 +49,14 @@ const NoteList: React.FC = (props: any) => {
     )
 }
 
+// TODO REDUX
+// get la note éditée et changer le titre Notes par le titre de la note
+// get path navigation name?
 const Notes: React.FC = (props: any) => {
-    console.log(props.location.pathname)
     const writeMode = props.location.pathname !== "/app/notes"
-
     return (
         <AppContainer backgroundColor="#ffffe6">
-            <HeaderApp color="#00000" title="Notes" rightText={!writeMode ? "New" : undefined} onClickOnRightText={() => {}} />
+            <HeaderApp color="#00000" title="Notes" rightText={!writeMode ? "New" : "Edit"} onClickOnRightText={() => {}} />
             <Switch>
                 <Route exact path={props.match.path} component={NoteList} />
                 <Route path={`${props.match.path}/:id`} component={NotePage} />

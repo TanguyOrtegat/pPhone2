@@ -1,6 +1,7 @@
 
 .app-icon {
     display: block;
+    position: relative;
     // background-color: red;
     width: 48px;
     
@@ -33,3 +34,15 @@
     color: rgba(240, 240, 240, 0.8);
     padding-bottom: 6px;
 }
+
+.app-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 2px 5px;
+    border-radius: 7px;
+    background: red;
+    color: white;
+    font-size: 9px;
+  }
+  

@@ -19,12 +19,12 @@ export const applicationList: IAppItemProps[] = [
     { name: 'Répertoire', icon: 'ibooks' },
     //{ name: 'WhatsApp', icon: 'whatsapp' },
     //{ name: 'Local', icon: 'local' },
-    { name: 'Réglages', icon: 'settings' },
+    { name: 'Réglages', icon: 'settings', notifications: 1 },
 ]
 
 export const bottomApplicationList: IAppItemProps[] = [
     { name: 'Téléphone', icon: 'call' },
-    { name: 'Messages', icon: 'messages', path: 'messages' },
-    { name: 'Mail', icon: 'mail', path: 'mail' },
+    { name: 'Messages', icon: 'messages', path: 'messages', notifications: 6 },
+    { name: 'Mail', icon: 'mail', path: 'mail', notifications: 42 },
     { name: 'Notes', icon: 'notes', path: 'notes' },
 ]

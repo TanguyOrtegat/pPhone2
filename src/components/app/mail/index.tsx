@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import './Mail.scss'
 import HeaderApp from "../../utils/HeaderApp";
-import Message from "./MessageItem";
+import Message from "../../utils/MessageItem/MessageItem";
 import AppContainer from "../../utils/AppContainer";
 
 export interface IMailProps {

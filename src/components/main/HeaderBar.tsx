@@ -20,6 +20,13 @@ let inApp = false;
 
 // TODO: Switch icons to SVG to support colors.
 
+let headerIcons = [
+  { name: 'Battery', icon: [battery, battery2] },
+  { name: 'Wifi', icon: [wifi, wifi2] },
+  { name: 'Service', icon: [service, service2] },
+  { name: 'Location', icon: [location, location2] },
+]
+
 function setInApp(bool: boolean) {
   inApp = bool
 }
@@ -48,50 +55,32 @@ const CurrentTime: React.FC = () => {
 }
 
 let HeaderBarComponent: React.FC = (props: any) => {
-    const { history } = props;
-    const [color, setColor] = useState("white");
+  const { history } = props;
+  const [color, setColor] = useState("white");
 
-    useEffect(() => {
-      if (!history.location.pathname || history.location.pathname === "/") {
-        setColor("white");
-        setInApp(false);
-      } else {
-        setColor("black");
-        setInApp(true);
-      }
-      }, [history.location.pathname])
-
-    if (inApp) {
-      return (
-          <div className="phone-header" style={{ color: color }}>
-              <div className="phone-header-left">
-                  <CurrentTime />
-                  <div className="phone-header-icon" style={{ backgroundImage: `url(${location2})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
-              </div>
-
-              <div className="phone-header-right">
-                  <div className="phone-header-icon" style={{ backgroundImage: `url(${service2})` }}></div>
-                  <div className="phone-header-icon" style={{ backgroundImage: `url(${wifi2})` }}></div>
-                  <div className="phone-header-icon" style={{ backgroundImage: `url(${battery2})`, width: '14px' }}></div>
-              </div>
-          </div>
-      )
+  useEffect(() => {
+    if (!history.location.pathname || history.location.pathname === "/") {
+      setColor("white");
+      setInApp(false);
     } else {
-      return (
-        <div className="phone-header" style={{ color: color }}>
-            <div className="phone-header-left">
-                <CurrentTime />
-                <div className="phone-header-icon" style={{ backgroundImage: `url(${location})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
-            </div>
-
-            <div className="phone-header-right">
-                <div className="phone-header-icon" style={{ backgroundImage: `url(${service})` }}></div>
-                <div className="phone-header-icon" style={{ backgroundImage: `url(${wifi})` }}></div>
-                <div className="phone-header-icon" style={{ backgroundImage: `url(${battery})`, width: '14px' }}></div>
-            </div>
-        </div>
-    )
+      setColor("black");
+      setInApp(true);
     }
+  }, [history.location.pathname])
+
+  return (
+    <div className="phone-header" style={{ color: color }}>
+        <div className="phone-header-left">
+            <CurrentTime />
+            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[3].icon[inApp? 1:0]})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
+        </div>  
+        <div className="phone-header-right">
+            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[2].icon[inApp? 1:0]})` }}></div>
+            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[1].icon[inApp? 1:0]})` }}></div>
+            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[0].icon[inApp? 1:0]})`, width: '14px' }}></div>
+        </div>
+    </div>
+  )
 };
 
 export const HeaderBar = withRouter(HeaderBarComponent);

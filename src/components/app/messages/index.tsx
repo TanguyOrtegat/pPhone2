@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import './Messages.scss'
 import './../mail/Mail.scss'
 import HeaderApp from "../../utils/HeaderApp";
-import Message from "../mail/MessageItem";
+import Message from "../../utils/MessageItem/MessageItem";
 import { IMailProps } from "../mail";
 import AppContainer from "../../utils/AppContainer";
 import { Switch, Route, Link } from "react-router-dom";

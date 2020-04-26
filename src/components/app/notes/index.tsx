@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import './Notes.scss'
 import HeaderApp from "../../utils/HeaderApp";
-import Message, { IMessage } from "../mail/MessageItem";
+import Message, { IMessage } from "../../utils/MessageItem/MessageItem";
 import { Switch, Route, useParams, useLocation, useHistory, Link, withRouter } from "react-router-dom";
 import AppContainer from "../../utils/AppContainer";
 

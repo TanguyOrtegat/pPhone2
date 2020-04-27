@@ -83,4 +83,4 @@ let HeaderBarComponent: React.FC = (props: any) => {
   )
 };
 
-export const HeaderBar = withRouter(HeaderBarComponent);
+export let HeaderBar = withRouter(HeaderBarComponent);

@@ -23,7 +23,7 @@ export const applicationList: IAppItemProps[] = [
 ]
 
 export const bottomApplicationList: IAppItemProps[] = [
-    { name: 'Téléphone', icon: 'call' },
+    { name: 'Téléphone', icon: 'call', path: 'phone' },
     { name: 'Messages', icon: 'messages', path: 'messages', notifications: 6 },
     { name: 'Mail', icon: 'mail', path: 'mail', notifications: 42 },
     { name: 'Notes', icon: 'notes', path: 'notes' },

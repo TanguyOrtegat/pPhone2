@@ -47,7 +47,7 @@ const RecentsPage: React.FC = () => {
                 <div className="header-left">
                     {state.deleteMode && <div onClick={removeAllCalls}>Clear</div>}
                 </div>
-                <div className="call-filter">
+                <div className="header-middle call-filter">
                     <div className={`call-filter-btn ${state.onlyMissed ? "" : "active"}`} onClick={toggleOnlyMissed}>All</div>
                     <div className={`call-filter-btn ${state.onlyMissed ? "active" : ""}`} onClick={toggleOnlyMissed}>Missed</div>
                 </div>

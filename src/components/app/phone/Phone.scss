@@ -159,15 +159,35 @@ ul.call-history {
 .header {
     padding: 10px;
     display: flex;
-    font-size: 10px;
+    font-size: 12px;
     align-items: center;
     justify-content: space-between;
+
+    .header-right {
+        flex: 1;
+        text-align: right;
+        color: #327bf6;
+    }
+    
+    .header-left {
+        flex: 1;
+        text-align: left;
+        color: #327bf6;
+    }
+    
+    .header-middle {
+        width: 100px;
+        text-align: center;
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid #f5f5f5;
 }
 
 .call-filter {
     padding: 2px;
     display: flex;
-    width: 100px;
     background-color: #eeeeee;
     border-radius: 5px;
 }
@@ -183,18 +203,6 @@ ul.call-history {
     }
 }
 
-.header-right {
-    flex: 1;
-    text-align: right;
-    color: #327bf6;
-}
-
-.header-left {
-    flex: 1;
-    text-align: left;
-    color: #327bf6;
-}
-
 h1 {
     margin: 0 0 8px 18px;
     font-size: 22px;
@@ -204,4 +212,18 @@ h1 {
     fill: red;
     width: 12px;
     margin: 0 6px 0 10px;
+}
+
+.favourites-container {
+    height: 450px;
+    line-height: 450px;
+    vertical-align: middle;
+    text-align: center;
+    color: #939393;
+}
+
+.plus-icon {
+    width: 12px;
+    fill: #327bf6;
+    margin-top: 4px;
 }

@@ -34,8 +34,8 @@ const RecentsPage: React.FC = () => {
 
     const removeCall = (id: number) => SetState({ ...state, calls: state.calls.filter(call => call.id != id) });
     const removeAllCalls = () => SetState({ ...state, deleteMode: false, calls: [] });
-    const toggleDeleteMode = () => SetState({ ...state, deleteMode: !state.deleteMode });
     const toggleOnlyMissed = () => SetState({ ...state, onlyMissed: !state.onlyMissed });
+    const toggleDeleteMode = () => SetState({ ...state, deleteMode: !state.deleteMode });
 
     const getCalls = () => state.calls
         .filter(call => call.missed || !state.onlyMissed)
@@ -53,8 +53,10 @@ const RecentsPage: React.FC = () => {
                 </div>
                 <div className="header-right" onClick={toggleDeleteMode}>{state.deleteMode ? "Done" : "Edit"}</div>
             </div>
-            <h1>Recents</h1>
-            <ul className="call-history">{getCalls()}</ul>
+            <div className="page-container">
+                <h1 className="page-title">Recents</h1>
+                <ul className="list-view">{getCalls()}</ul>
+            </div>
         </div>
     );
 };
@@ -68,18 +70,27 @@ const Call: React.FC<ICallProps> = (props: ICallProps) => {
 
     const [deleting, setDeleting] = useState(false);
 
+    if (!props.deleteMode && deleting) {
+        setDeleting(false);
+    }
+
+    const onDeleteClicked = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+        event.preventDefault();
+        props.onCallDeleted();
+    }
+
     return (
-        <li className={props.deleteMode && deleting ? "deleting" : ""}>
+        <li className={props.deleteMode && deleting ? "deleting" : ""} onClick={() => deleting && setDeleting(false)}>
             {props.deleteMode && <div onClick={() => setDeleting(true)}><ReactSVG className="minus-icon" src={MinusIcon}></ReactSVG></div>}
-            <div className="outgoing-container">
+            <div className="left-icon-container">
                 {props.outgoing && <ReactSVG src={OutgoingIcon} className="outgoing-icon" />}
             </div>
-            <div className="call-name">
+            <div className="informations">
                 <h3 className={props.missed ? "missed" : ""}>{props.name}</h3>
                 <h4 className="text-light">{props.type}</h4>
             </div>
-            <div className="text-light call-date">{props.date}</div>
-            {props.deleteMode && deleting && <div className="confirm-delete-btn" onClick={() => props.onCallDeleted()}>Delete</div>}
+            <div className="text-light details">{props.date}</div>
+            <div className={`confirm-delete-btn ${props.deleteMode && deleting && "delete-btn-displayed"}`} onClick={onDeleteClicked}>Delete</div>
         </li >
     );
 }

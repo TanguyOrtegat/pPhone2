@@ -17,7 +17,7 @@ const KeypadPage: React.FC = () => {
     return (
         <div className="keypad-container">
             <div className="keypad-header">
-                <h2>{number}</h2>
+                <h2 className="keypad-number">{number}</h2>
             </div>
             <div>
                 <div className="keypad-row">
@@ -47,7 +47,7 @@ const KeypadPage: React.FC = () => {
                         <ReactSVG id="call-icon" src={PhoneIcon} />
                     </div>
                     <div id="keypad-delete" onClick={deletePressed}>
-                        <ReactSVG id="delete-icon" src={DeleteIcon} />
+                        {number.length > 0 && <ReactSVG id="delete-icon" src={DeleteIcon} />}
                     </div>
                 </div>
             </div>

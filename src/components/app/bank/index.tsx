@@ -50,7 +50,7 @@ const AccountPage: React.FC = () => {
     const getAllTransactions = () => defaultTransactions.map(group => (
         <div className="transaction-group">
             <h3 className="transaction-group-label">{group.label}</h3>
-            <ul>
+            <ul className="transaction-list">
                 {group.transactions.map(transaction => <Transaction {...transaction} />)}
             </ul>
         </div>

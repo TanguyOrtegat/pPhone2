@@ -1,0 +1,91 @@
+$btn-background: #e5e5e5;
+$btn-call-background:#63c366;
+
+.keypad-row {
+    display: flex;
+    justify-content: center;
+}
+
+
+.keypad-header {
+    height: 120px;
+}
+
+h2 {
+    line-height: 120px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.keypad-btn {
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    margin: 8px;
+    background-color: $btn-background;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+
+    &:hover {
+        background-color: darken($btn-background, 20%);
+    }
+}
+
+#call-btn {
+    background-color: $btn-call-background;
+    fill: white;
+    margin-left: 74px;
+
+    &:hover {
+        background-color: darken($btn-call-background, 20%);
+    }
+}
+
+#call-icon {
+    width: 22px;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.keypad-letters {
+    margin-top: -3px;
+    font-size: 7px;
+    font-weight: bold;
+}
+
+#plus {
+    margin-top: -6px;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+#asterisk {
+    font-size: 35px;
+    font-weight: 100;
+    vertical-align: middle;
+    line-height: 44px;
+}
+
+
+#sharp-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 7px;
+    margin-top: 4px;
+}
+
+#delete-icon {
+    fill: $btn-background;
+    width: 20px;
+    height: 18px;
+
+    &:hover {
+        fill: darken($btn-background, 20%);
+    }
+}
+
+#keypad-delete {
+    margin: 8px;
+    padding: 15px 16px;
+}

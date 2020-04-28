@@ -18,7 +18,7 @@ const TabsNavigator: React.FC<ITabsNavigatorProps> = (props: ITabsNavigatorProps
 
     const getLink = (tab: ITab) => {
         return (
-            <NavLink className="nav-link" to={tab.route} exact={!!tab.exactRoute}>
+            <NavLink key={tab.name} className="nav-link" to={tab.route} exact={!!tab.exactRoute}>
                 <div className="icon-container">
                     <ReactSVG className="icon" src={tab.icon} />
                 </div>

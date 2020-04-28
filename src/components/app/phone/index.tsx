@@ -22,7 +22,7 @@ const Phone: React.FC = (props: any) => {
     const paths = {
         contact: `${appPath}/contact`,
         recents: `${appPath}/recents`,
-        keypad: `${appPath}/keypad`,
+        keypad: `${appPath}`,
         favourites: `${appPath}/favourites`,
         voicemail: `${appPath}/voicemail`
     }
@@ -37,7 +37,6 @@ const Phone: React.FC = (props: any) => {
 
     return (
         <AppContainer>
-            <HeaderApp color="#000000" title="Phone" />
             <Switch>
                 <Route path={paths.keypad} exact component={KeypadPage} />
                 <Route path={paths.recents} component={RecentsPage} />

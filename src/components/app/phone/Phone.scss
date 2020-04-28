@@ -89,3 +89,119 @@ h2 {
     margin: 8px;
     padding: 15px 16px;
 }
+
+
+ul.call-history {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        height: 45px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    li:first-child {
+        border-top: 1px solid #f5f5f5;
+    }
+}
+
+.text-light {
+    color: #b2b2b2 !important;
+}
+
+.call-name {
+    flex: 1;
+
+    h3, h4 {
+        margin: 0;
+    }
+}
+
+.missed {
+    color: red;
+}
+
+.outgoing-icon {
+    width: 10px;
+    fill: #b2b2b2;
+    margin-top: 2px;
+}
+
+.outgoing-container {
+    width: 15px;
+    padding-top: 9px;
+    align-self: flex-start;
+    margin-left: 5px;
+}
+
+.confirm-delete-btn {
+    height: 45px;
+    width: 50px;
+    line-height: 45px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+
+.deleting {
+    margin-left: -50px;
+}
+
+.call-date {
+    margin: 0 8px;
+}
+
+.header {
+    padding: 10px;
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.call-filter {
+    padding: 2px;
+    display: flex;
+    width: 100px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+
+.call-filter-btn {
+    border-radius: 5px;
+    padding: 4px;
+    flex: 1;
+    text-align: center;
+
+    &.active {
+        background-color: white;
+    }
+}
+
+.header-right {
+    flex: 1;
+    text-align: right;
+    color: #327bf6;
+}
+
+.header-left {
+    flex: 1;
+    text-align: left;
+    color: #327bf6;
+}
+
+h1 {
+    margin: 0 0 8px 18px;
+    font-size: 22px;
+}
+
+.minus-icon {
+    fill: red;
+    width: 12px;
+    margin: 0 6px 0 10px;
+}

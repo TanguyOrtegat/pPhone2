@@ -6,18 +6,46 @@ import KeypadPage from "./keypad-page";
 import FavouritesPage from "./favourites-page";
 import VoicemailPage from "./voicemail-page";
 import RecentsPage from "./recents-page";
+import TabsNavigator, { ITab } from "../../utils/TabsNavigator/TabsNavigator";
+
+import ClockIcon from "../../../assets/icons/clock-fill.svg";
+import StarIcon from "../../../assets/icons/star-fill.svg";
+import CircleGridIcon from "../../../assets/icons/circle-grid.svg";
+import PersonCircleIcon from "../../../assets/icons/person-circle.svg";
+import VoicemailIcon from "../../../assets/icons/voicemail.svg";
+
+
 
 const Phone: React.FC = (props: any) => {
+    const appPath = props.match.path;
+
+    const paths = {
+        contact: `${appPath}/contact`,
+        recents: `${appPath}/recents`,
+        keypad: `${appPath}/keypad`,
+        favourites: `${appPath}/favourites`,
+        voicemail: `${appPath}/voicemail`
+    }
+
+    const tabs: ITab[] = [
+        { name: "Favourites", route: paths.favourites, exactRoute: false, icon: StarIcon },
+        { name: "Contact", route: paths.contact, exactRoute: false, icon: PersonCircleIcon },
+        { name: "Keypad", route: paths.keypad, exactRoute: true, icon: CircleGridIcon },
+        { name: "Recents", route: paths.recents, exactRoute: false, icon: ClockIcon },
+        { name: "Voicemail", route: paths.voicemail, exactRoute: false, icon: VoicemailIcon }
+    ]
+
     return (
         <AppContainer>
             <HeaderApp color="#000000" title="Phone" />
             <Switch>
-                <Route path={`${props.match.path}`} exact component={KeypadPage} />
-                <Route path={`${props.match.path}/recents`} component={RecentsPage} />
-                <Route path={`${props.match.path}/voicemail`} component={VoicemailPage} />
-                <Route path={`${props.match.path}/favourites`} component={FavouritesPage} />
+                <Route path={paths.keypad} exact component={KeypadPage} />
+                <Route path={paths.recents} component={RecentsPage} />
+                <Route path={paths.voicemail} component={VoicemailPage} />
+                <Route path={paths.favourites} component={FavouritesPage} />
             </Switch>
-        </AppContainer>
+            <TabsNavigator tabs={tabs}></TabsNavigator>
+        </AppContainer >
     );
 }
 

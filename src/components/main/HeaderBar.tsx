@@ -49,7 +49,7 @@ const CurrentTime: React.FC = () => {
 
   return (
     <span className="phone-header-time">
-      {date.getHours()}:{(date.getMinutes()<10 ? '0' : '') + date.getMinutes()}
+      {date.getHours()}:{(date.getMinutes() < 10 ? '0' : '') + date.getMinutes()}
     </span>
   )
 }
@@ -59,7 +59,7 @@ let HeaderBarComponent: React.FC = (props: any) => {
   const [color, setColor] = useState("white");
 
   useEffect(() => {
-    if (!history.location.pathname || history.location.pathname === "/") {
+    if (!history.location.pathname || history.location.pathname === "/" || history.location.pathname.startsWith('/call')) {
       setColor("white");
       setInApp(false);
     } else {
@@ -70,15 +70,15 @@ let HeaderBarComponent: React.FC = (props: any) => {
 
   return (
     <div className="phone-header" style={{ color: color }}>
-        <div className="phone-header-left">
-            <CurrentTime />
-            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[3].icon[inApp? 1:0]})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
-        </div>  
-        <div className="phone-header-right">
-            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[2].icon[inApp? 1:0]})` }}></div>
-            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[1].icon[inApp? 1:0]})` }}></div>
-            <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[0].icon[inApp? 1:0]})`, width: '14px' }}></div>
-        </div>
+      <div className="phone-header-left">
+        <CurrentTime />
+        <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[3].icon[inApp ? 1 : 0]})`, float: 'right', width: '8px', marginTop: '2px' }}></div>
+      </div>
+      <div className="phone-header-right">
+        <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[2].icon[inApp ? 1 : 0]})` }}></div>
+        <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[1].icon[inApp ? 1 : 0]})` }}></div>
+        <div className="phone-header-icon" style={{ backgroundImage: `url(${headerIcons[0].icon[inApp ? 1 : 0]})`, width: '14px' }}></div>
+      </div>
     </div>
   )
 };

@@ -14,9 +14,12 @@ const Bank = React.lazy(() =>
     import('./components/app/bank/index'));
 const Phone = React.lazy(() =>
     import('./components/app/phone/index'));
+const Call = React.lazy(() =>
+    import('./components/home/call/index'));
 
 const routes = [
     { path: '/', exact: true, component: AppScreen },
+    { path: '/call', component: Call },
     { path: '/app/camera', exact: true, component: Camera },
     { path: '/app/mail', exact: true, component: Mail },
     { path: '/app/messages', component: Messages },

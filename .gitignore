@@ -104,3 +104,6 @@ dist
 .tern-port
 
 package-lock.*
+
+#OSX
+.DS_STORE

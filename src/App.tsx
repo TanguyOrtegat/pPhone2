@@ -5,6 +5,7 @@ import { Phone } from './components/main/Phone'
 
 import SFProTextRegular from './assets/fonts/SF-Pro-Text-Regular.otf'
 import SFProTextSemibold from './assets/fonts/SF-Pro-Text-Semibold.otf'
+import SFProTextLight from './assets/fonts/SF-Pro-Text-Light.ttf'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'SFProTextSemibold';
     src: url(${SFProTextSemibold});
   }
+  @font-face {
+    font-family: 'SFProTextLight';
+    src: url(${SFProTextLight});
+  }
 `;
 
 const Container = styled.div`
@@ -33,7 +38,7 @@ export const App: React.FC = (props: any) => {
   return (
     <Container>
       <GlobalStyle />
-      
+
       <Phone />
     </Container>
   );

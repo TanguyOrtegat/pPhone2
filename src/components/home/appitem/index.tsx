@@ -17,7 +17,7 @@ import WalletIcon from '../../../assets/icons/wallet.png'
 import WorkspaceIcon from '../../../assets/icons/workspace.png'
 import AppStoreIcon from '../../../assets/icons/appstore.png'
 import HealthIcon from '../../../assets/icons/health.png'
-import iBooksIcon from '../../../assets/icons/ibooks.png'
+import ContactsIcon from '../../../assets/icons/contacts.png'
 import WhatsappIcon from '../../../assets/icons/whatsapp.png'
 import LocalIcon from '../../../assets/icons/local.png'
 import SettingsIcon from '../../../assets/icons/settings.png'
@@ -45,7 +45,7 @@ const iconList = {
     'workspace': WorkspaceIcon,
     'appstore': AppStoreIcon,
     'health': HealthIcon,
-    'ibooks': iBooksIcon,
+    'contacts': ContactsIcon,
     'whatsapp': WhatsappIcon,
     'local': LocalIcon,
     'settings': SettingsIcon,

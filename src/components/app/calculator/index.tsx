@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Calculator.scss";
 import AppContainer from "../../utils/AppContainer";
 
@@ -37,8 +37,6 @@ const Calculator: React.FC = () => {
         }
         setState({ ...state, input: input });
     }
-
-    const digitsCount = (n: number) => n.toLocaleString().replace(".", "").length;
 
     const resetClicked = () => state.input
         ? setState({ ...state, input: undefined, operation: undefined, decimal: false })
@@ -98,22 +96,10 @@ const Calculator: React.FC = () => {
         return newState;
     }
 
-    const getCalculatorInput = (number: number) => {
-        const formated = digitsCount(number) > 9
-            ? number.toPrecision(9)
-            : number.toLocaleString(undefined, { maximumSignificantDigits: 9 });
-
-        const fontSize = formated.length < 7 ? 55 : (55 - formated.length * 2);
-
-        return (
-            <h1 className="calculator-result" style={{ fontSize: fontSize + 'px' }}>{formated}</h1>
-        );
-    }
-
     return (
         <AppContainer backgroundColor="#000000">
             <div id="calculator">
-                {getCalculatorInput(state.input ? state.input : state.result)}
+                <CalculatorInput input={(state.input ? state.input : state.result)} />
                 <div className="btn-container">
                     <div className="btn-circle btn-light" onClick={resetClicked}>
                         {state.input ? "C" : "AC"}
@@ -179,6 +165,44 @@ const Calculator: React.FC = () => {
                 </div>
             </div>
         </AppContainer >
+    );
+}
+
+const digitsCount = (n: number) => n.toLocaleString().replace(".", "").length;
+
+interface CalculatorInputProps {
+    input: number
+}
+
+const CalculatorInput: React.FC<CalculatorInputProps> = props => {
+    const formated = digitsCount(props.input) > 12
+        ? props.input.toPrecision(9)
+        : props.input.toLocaleString();
+
+    const inputRef = React.createRef<HTMLHeadingElement>();
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+
+    const getTextWidth = (text: string, size: number) => {
+        if (!context)
+            return -1;
+        context.font = `${size}px SFProTextRegular`;
+        return context.measureText(text).width;
+    }
+
+    useEffect(() => {
+        if (inputRef.current) {
+            let size = 65;
+            while (getTextWidth(formated, size) > inputRef.current.clientWidth && size > 0) {
+                size -= 0.5;
+            }
+            inputRef.current.style.fontSize = size + "px";
+            inputRef.current.textContent = formated;
+        }
+    }, [formated]);
+
+    return (
+        <h1 className="calculator-result" ref={inputRef}></h1>
     );
 }
 

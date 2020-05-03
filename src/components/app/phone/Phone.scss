@@ -104,7 +104,7 @@ ul.list-view {
         align-items: center;
         font-size: 10px;
         height: 45px;
-        border-bottom: 1px solid #dddddd;
+        border-bottom: .5px solid #dddddd;
         transition: margin-left 0.5s;
 
         h3, h4 {
@@ -130,7 +130,7 @@ ul.list-view {
     }
     
     li:first-child {
-        border-top: 1px solid #dddddd;
+        border-top: .5px solid #dddddd;
     }
 }
 
@@ -202,7 +202,7 @@ ul.list-view {
 }
 
 .border-bottom {
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: .5px solid #f5f5f5;
 }
 
 .call-filter {
@@ -290,7 +290,7 @@ h1.page-title {
     font-size: 12px;
     align-items: center;
     padding: 10px;
-    border-top: 1px solid #dddddd;
+    border-top: .5px solid #dddddd;
     color: #cacaca;
 
     .enable {

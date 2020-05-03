@@ -28,6 +28,7 @@ const PhoneCoque = styled.div`
 `
 
 import background from '../../assets/backgrounds/001.png'
+import BannerNotifications from "./BannerNotifications";
 
 export const Phone: React.FC = (props: any) => {
     const loading = () => <div className="animated fadeIn pt-1 text-center">Chargement...</div>
@@ -35,22 +36,23 @@ export const Phone: React.FC = (props: any) => {
     return (
         <div className="phone-container">
             <PhoneCoque />
-            <div className="test-bg"/>
+            <div className="test-bg" />
 
             <Suspense fallback={loading()}>
                 <HashRouter basename='/phone'>
                     <div className="phone-content" style={{ backgroundImage: `url(${background})` }}>
                         <HeaderBar />
+                        <BannerNotifications />
                         <Switch>
                             {routes.map((route, idx) => {
                                 return route.component ? (
-                                <Route
-                                    key={idx}
-                                    path={route.path}
-                                    exact={route.exact}
-                                    render={(props: any) => (
-                                        <route.component {...props} />
-                                    )} />
+                                    <Route
+                                        key={idx}
+                                        path={route.path}
+                                        exact={route.exact}
+                                        render={(props: any) => (
+                                            <route.component {...props} />
+                                        )} />
                                 ) : (null);
                             })}
                         </Switch>

@@ -22,13 +22,18 @@ export interface IRemoveNotif {
 
 export type INotifActions = IAddNotif | IRemoveNotif;
 
-export const addNotif = (message: string, timeout?: number): ResultThunk<void> => {
+export const addNotif = (message: string, date: string, appName: string, appIcon: string, link: string, title?: string, timeout?: number): ResultThunk<void> => {
   return dispatch => {
     const id = Date.now();
     dispatch({
       type: ADD_NOTIF,
       payload: {
         message,
+        date,
+        appName,
+        appIcon,
+        link,
+        title,
         id
       }
     });

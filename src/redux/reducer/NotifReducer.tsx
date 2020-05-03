@@ -1,8 +1,14 @@
 import { ADD_NOTIF, INotifActions, REMOVE_NOTIF } from "../action/NotifAction";
+import { iconList } from "../../const/app";
 
 export interface INotif {
-  message: string;
-  id: number;
+  id: number,
+  title?: string,
+  message: string,
+  date: string,
+  appName: keyof typeof iconList,
+  appIcon: string,
+  link: string
 }
 
 const initialState: Array<INotif> = [];

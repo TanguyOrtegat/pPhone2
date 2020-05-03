@@ -2,6 +2,7 @@
   "name": "pphone",
   "version": "0.1.0",
   "dependencies": {
+    "@types/react-transition-group": "^1.1.6",
     "node-sass": "^4.13.1",
     "prettier": "^1.18.2",
     "react": "^16.11.0",
@@ -10,6 +11,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.1",
     "react-svg": "^11.0.9",
+    "react-transition-group": "^1.2.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",

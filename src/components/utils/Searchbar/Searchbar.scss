@@ -1,0 +1,23 @@
+#searchbar {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.searchbar-container {
+    background-color: #e7e7e8;
+    border-radius: 5px;
+    display: flex;
+    padding: 2px;
+    margin: 0 10px;
+}
+
+#searchbar-icon {
+    width: 10px;
+    margin: 0 4px 2px 4px;
+    fill: #808084;
+}

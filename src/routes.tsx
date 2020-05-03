@@ -14,6 +14,8 @@ const Bank = React.lazy(() =>
     import('./components/app/bank/index'));
 const Phone = React.lazy(() =>
     import('./components/app/phone/index'));
+const Contacts = React.lazy(() =>
+    import('./components/app/contacts/index'))
 const Call = React.lazy(() =>
     import('./components/home/call/index'));
 
@@ -25,6 +27,7 @@ const routes = [
     { path: '/app/messages', component: Messages },
     { path: '/app/notes', component: Notes },
     { path: '/app/bank', exact: true, component: Bank },
+    { path: '/app/contacts', component: Contacts },
     { path: '/app/phone', component: Phone }
 ]
 

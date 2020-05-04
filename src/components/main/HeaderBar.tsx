@@ -34,7 +34,7 @@ const HeaderBarComponent: React.FC = (props: any) => {
   const { history } = props;
   const [lightHeader, setLightHeader] = useState(false);
 
-  useEffect(() => setLightHeader(!history.location.pathname.startsWith('/app')), [history.location.pathname])
+  useEffect(() => setLightHeader(!history.location.pathname.startsWith('/app') || history.location.pathname == "/app/calculator"), [history.location.pathname])
 
   return (
     <div className={`phone-header ${lightHeader ? "phone-header-light" : "phone-header-dark"}`}>

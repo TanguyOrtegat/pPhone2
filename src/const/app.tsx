@@ -19,6 +19,7 @@ import ContactsIcon from '../assets/icons/contacts.png'
 import WhatsappIcon from '../assets/icons/whatsapp.png'
 import LocalIcon from '../assets/icons/local.png'
 import SettingsIcon from '../assets/icons/settings.png'
+import CalculatorIcon from '../assets/icons/calculator.png'
 
 import FacebookIcon from '../assets/icons/facebook.png'
 import InstagramIcon from '../assets/icons/instagram.png'
@@ -46,6 +47,7 @@ export const applicationList: IAppItemProps[] = [
     //{ name: 'WhatsApp', icon: 'whatsapp' },
     //{ name: 'Local', icon: 'local' },
     { name: 'Réglages', icon: 'settings', notifications: 1 },
+    { name: 'Calculator', icon: 'calculator', path: 'calculator' }
 ]
 
 export const bottomApplicationList: IAppItemProps[] = [
@@ -79,5 +81,6 @@ export const iconList = {
     'instagram': InstagramIcon,
     'messages': MessagesIcon,
     'messenger': MessengerIcon,
-    'call': CallIcon
+    'call': CallIcon,
+    'calculator': CalculatorIcon
 }

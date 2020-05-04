@@ -7,17 +7,15 @@ import FacetimeIcon from "../../../assets/icons/facetime.svg";
 import MailIcon from "../../../assets/icons/mail-fill.svg";
 import DollarIcon from "../../../assets/icons/dollar.svg";
 import { ReactSVG } from "react-svg";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps, withRouter } from "react-router-dom";
 
-const ContactDetailsPage: React.FC = (props: any) => {
-
-    const id = props.match.params.id;
+const ContactDetailsPage: React.FC<RouteComponentProps> = props => {
 
     let [edit, setEdit] = useState(false);
     const toggleEdit = () => setEdit(!edit);
 
     const backToContacts = (
-        <Link to="/app/contacts" className="header-left">
+        <Link to={props.location.pathname.slice(0, props.location.pathname.lastIndexOf('/'))} className="header-left">
             <ReactSVG id="back-icon" src={BackIcon} /> Contacts
         </Link>
     );
@@ -144,4 +142,4 @@ const EditContactDetails: React.FC = () => {
     );
 }
 
-export default ContactDetailsPage;
+export default withRouter(ContactDetailsPage);

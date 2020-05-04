@@ -3,7 +3,7 @@ import './Contacts.scss';
 import Searchbar from "../../utils/Searchbar";
 import PlusIcon from "../../../assets/icons/plus.svg";
 import { ReactSVG } from "react-svg";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 
 interface Contact {
     id: number,
@@ -20,14 +20,14 @@ const defaultContacts: Contact[] = [
     { id: 6, firstname: "Travis" }
 ];
 
-const ContactsPage: React.FC = () => {
+const ContactsPage: React.FC<RouteComponentProps> = props => {
 
     const getSeparator = (char: string) => (<li id={char} key={char} className="separator"><h2>{char}</h2></li>);
 
     const getContact = (contact: Contact) => {
         return (
             <li key={contact.id}>
-                <Link to={`/app/contacts/${contact.id}`}>
+                <Link to={`${props.location.pathname}/${contact.id}`}>
                     {contact.lastname ?
                         <h3>{contact.firstname} <span className="bold">{contact.lastname}</span></h3> :
                         <h3 className="bold">{contact.firstname}</h3>}
@@ -79,4 +79,4 @@ const ContactsPage: React.FC = () => {
     );
 };
 
-export default ContactsPage;
+export default withRouter(ContactsPage);

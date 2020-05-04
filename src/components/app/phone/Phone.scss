@@ -3,177 +3,6 @@ $btn-call-background:#63c366;
 $red: #eb4e3d;
 $blue: #327bf6;
 
-.keypad-row {
-    display: flex;
-    justify-content: center;
-}
-
-
-.keypad-header {
-    height: 120px;
-}
-
-.keypad-number {
-    line-height: 120px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.keypad-btn {
-    height: 30px;
-    width: 30px;
-    padding: 10px;
-    margin: 8px;
-    background-color: $btn-background;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 20px;
-
-    &:hover {
-        background-color: darken($btn-background, 20%);
-    }
-}
-
-#call-btn {
-    background-color: $btn-call-background;
-    fill: white;
-    margin-left: 74px;
-
-    &:hover {
-        background-color: darken($btn-call-background, 20%);
-    }
-}
-
-#call-icon {
-    width: 22px;
-    margin-top: 4px;
-    margin-left: 4px;
-}
-
-.keypad-letters {
-    margin-top: -3px;
-    font-size: 7px;
-    font-weight: bold;
-}
-
-#plus {
-    margin-top: -6px;
-    font-size: 10px;
-    font-weight: bolder;
-}
-
-#asterisk {
-    font-size: 35px;
-    font-weight: 100;
-    vertical-align: middle;
-    line-height: 44px;
-}
-
-
-#sharp-icon {
-    width: 16px;
-    height: 16px;
-    margin-left: 7px;
-    margin-top: 4px;
-}
-
-#delete-icon {
-    fill: $btn-background;
-    width: 20px;
-    height: 18px;
-
-    &:hover {
-        fill: darken($btn-background, 20%);
-    }
-}
-
-#keypad-delete {
-    margin: 8px;
-    padding: 15px 15px;
-    width: 20px;
-}
-
-
-ul.list-view {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-        display: flex;
-        align-items: center;
-        font-size: 10px;
-        height: 45px;
-        border-bottom: .5px solid #dddddd;
-        transition: margin-left 0.5s;
-
-        h3, h4 {
-            margin: 0;
-        }
-
-        h3 {
-            margin-bottom: 2px;
-        }
-
-        .informations {
-            flex: 1;
-        }
-
-        .details {
-            margin: 0 8px;
-            text-align: right;
-        }
-
-        &.selected {
-            background-color: #f2f2f6;
-        }
-    }
-    
-    li:first-child {
-        border-top: .5px solid #dddddd;
-    }
-}
-
-.text-light {
-    color: #b2b2b2 !important;
-}
-
-.deleting {
-    margin-left: -50px;
-
-    .delete-btn-displayed {
-        width: 50px;
-    }
-}
-
-.missed {
-    color: $red;
-}
-
-.outgoing-icon {
-    width: 10px;
-    fill: #b2b2b2;
-    margin-top: 11px;
-}
-
-.left-icon-container {
-    width: 15px;
-    height: 45px;
-    margin-left: 5px;
-}
-
-.confirm-delete-btn {
-    height: 45px;
-    overflow: hidden;
-    width: 0px;
-    line-height: 45px;
-    vertical-align: middle;
-    text-align: center;
-    background-color: $red;
-    color: white;
-    transition: width 0.5s;
-}
-
 .header {
     margin-top: 10px;
     padding: 0 10px;
@@ -194,6 +23,12 @@ ul.list-view {
         text-align: left;
         color: $blue;
     }
+
+    &.header-disable {
+        .header-left, .header-right {
+            color: #bbbbbd;
+        }
+    }
     
     .header-middle {
         width: 100px;
@@ -201,61 +36,410 @@ ul.list-view {
     }
 }
 
-.border-bottom {
-    border-bottom: .5px solid #f5f5f5;
-}
+#favourites-page {
+    .favourites-container {
+        height: 450px;
+        line-height: 450px;
+        vertical-align: middle;
+        text-align: center;
+        color: #939393;
+    }
 
-.call-filter {
-    padding: 2px;
-    display: flex;
-    background-color: #eeeeee;
-    border-radius: 5px;
-}
-
-.call-filter-btn {
-    border-radius: 5px;
-    padding: 4px;
-    flex: 1;
-    text-align: center;
-    transition: background-color 0.3s;
-
-    &.active {
-        background-color: white;
+    .plus-icon {
+        width: 12px;
+        fill: $blue;
+        margin-top: 4px;
     }
 }
 
-h1.page-title {
-    margin: 10px 0 8px 18px;
-    font-size: 20px;
+#keypad-page {
+    .keypad-row {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .keypad-header {
+        height: 120px;
+    }
+    
+    .keypad-number {
+        line-height: 120px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .keypad-btn {
+        height: 30px;
+        width: 30px;
+        padding: 10px;
+        margin: 8px;
+        background-color: $btn-background;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 20px;
+    
+        &:hover {
+            background-color: darken($btn-background, 20%);
+        }
+    }
+    
+    #call-btn {
+        background-color: $btn-call-background;
+        fill: white;
+        margin-left: 74px;
+    
+        &:hover {
+            background-color: darken($btn-call-background, 20%);
+        }
+    }
+    
+    #call-icon {
+        width: 22px;
+        margin-top: 4px;
+        margin-left: 4px;
+    }
+    
+    .keypad-letters {
+        margin-top: -3px;
+        font-size: 7px;
+        font-weight: bold;
+    }
+
+    #asterisk {
+        font-size: 35px;
+        font-weight: 100;
+        vertical-align: middle;
+        line-height: 44px;
+    }
+
+    #plus {
+        margin-top: -6px;
+        font-size: 10px;
+        font-weight: bolder;
+    }
+
+    #sharp-icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 7px;
+        margin-top: 4px;
+    }
+
+    #delete-icon {
+        fill: $btn-background;
+        width: 20px;
+        height: 18px;
+
+        &:hover {
+            fill: darken($btn-background, 20%);
+        }
+    }
+
+    #keypad-delete {
+        margin: 8px;
+        padding: 15px 15px;
+        width: 20px;
+    }
 }
 
-.minus-icon {
-    fill: $red;
-    width: 12px;
-    margin: 0 6px 0 10px;
+#recents-page {
+    .deleting {
+        margin-left: -50px;
+    }
+
+    .confirm-delete-btn {
+        height: 100%;
+        overflow: hidden;
+        width: 0px;
+        line-height: 45px;
+        vertical-align: middle;
+        text-align: center;
+        background-color: $red;
+        color: white;
+        transition: width 0.5s;
+    }
+
+    .delete-btn-displayed {
+        width: 50px;
+    }
+
+    li {
+        height: 45px;
+    }
+
+    .outgoing-icon {
+        width: 10px;
+        fill: #b2b2b2;
+        margin-top: 3px;
+    }
+
+    .call-filter {
+        padding: 2px;
+        display: flex;
+        background-color: #eeeeee;
+        border-radius: 5px;
+    }
+    
+    .call-filter-btn {
+        border-radius: 5px;
+        padding: 4px;
+        flex: 1;
+        text-align: center;
+        transition: background-color 0.3s;
+    
+        &.active {
+            background-color: white;
+        }
+    }
+
+    .minus-icon {
+        fill: $red;
+        width: 12px;
+        margin: 0 6px 0 10px;
+    }
+
+    h1.page-title {
+        margin: 10px 0 8px 18px;
+        font-size: 20px;
+    }
+
+    .details {
+        margin-right: 8px;
+    }
 }
 
-.favourites-container {
-    height: 450px;
-    line-height: 450px;
-    vertical-align: middle;
-    text-align: center;
-    color: #939393;
+#voicemail-page {
+    #voicemail-options {
+        position: fixed;
+        background-color: #f6f6f6;
+        bottom: 27px;
+        left: 0;
+        right: 0;
+        height: 18px;
+        z-index:99;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        align-items: center;
+        padding: 10px;
+        border-top: .5px solid #dddddd;
+        color: #cacaca;
+    
+        .enable {
+            color: $blue;
+        }
+    }
+    
+    .voicemail-details {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+    }
+    
+    .voicemail-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+        transition: max-height .2s ease-out, min-height .2s ease-out;
+        max-height: 29px;
+        min-height: 29px;
+    }
+
+    .player .voicemail-container {
+        max-height: 85px;
+        min-height: 85px;
+    }
+
+    .player-line {
+        background-color: #e5e5e5;
+        height: 2px;
+        margin: 8px 0 2px 0;
+        border-radius: 2px;
+        display: flex;
+    }
+
+    .player-line-progress {
+        background-color: #8e8e92;
+        height: 2px;
+        border-radius: 2px;
+        padding-left: 1px;
+    }
+
+    .player-circle {
+        height: 5px;
+        width: 5px;
+        margin: -1px 0 0 -1px;
+        border-radius: 50%;
+        background-color: #8e8e92;
+    }
+
+    .player-btn {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .player-timing {
+        display: flex;
+        justify-content: space-between;
+
+        h5 {
+            color: #8e8e92;
+            margin: 0;
+        }
+    }
+
+    #play-icon {
+        fill: $blue;
+
+        svg {
+            height: 16px;
+            width: 12px;
+            margin-bottom: -2.5px;
+        }
+    }
+
+    .circle-btn {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #speaker-btn {
+        background-color: #e5e5ea;
+        fill: $blue;
+        margin-left: auto;
+
+        svg {
+            margin-top: 2.5px;
+            height: 10px;
+        }
+    }
+
+    #call-btn {
+        background-color: $blue;
+        fill: white;
+
+        svg {
+            height: 10px;
+            margin-top: 2.5px;
+        }
+    }
+
+    #delete-btn {
+        background-color: $red;
+        fill: white;
+
+        svg {
+            height: 12px;
+        }
+    }
+
+    ul {
+        height: 100%;
+    }
+
+    .has-player {
+        background-color: #dddde0;
+        li:not(.player) {
+            filter: opacity(25%);
+        }
+    }
+
+    li {
+        padding: 8px 8px 8px 0;
+        justify-content: flex-start;
+
+        &.player {
+            background-color: white;
+        }
+    }
+
+    .notification {
+        background: #2c76d6;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-top: 10.5px;
+    }
+
+    ul {
+        overflow-x: hidden;
+    }
+
+    .voicemail-transition-leave {
+        opacity: 1;
+
+        &.voicemail-transition-leave-active {
+            opacity: 0;
+            transition: opacity .3s ease-in;
+        }
+    }
 }
 
-.plus-icon {
-    width: 12px;
-    fill: $blue;
-    margin-top: 4px;
+ul.list-view {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        border-bottom: .5px solid #dddddd;
+        transition: margin-left 0.5s;
+
+        h3, h4 {
+            margin: 0;
+        }
+
+        h3 {
+            margin-bottom: 2px;
+        }
+
+        .informations {
+            flex: 1;
+        }
+
+        .details {
+            text-align: right;
+        }
+
+        &.selected {
+            background-color: #f2f2f6;
+        }
+
+        .circle-checkbox {
+            margin-left: 8px;
+        }
+    }
+    
+    li:first-child {
+        border-top: .5px solid #dddddd;
+    }
 }
 
-.notification {
-    display: inline-block;
-    background: #2c76d6;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-top: 18.5px;
+.text-light {
+    color: #b2b2b2 !important;
+}
+
+.missed {
+    color: $red;
+}
+
+.left-icon-container {
+    width: 15px;
+    height: 29px;
+    margin-left: 5px;
+}
+
+.border-bottom {
+    border-bottom: .5px solid #f5f5f5;
 }
 
 .font-lighter {
@@ -265,35 +449,4 @@ h1.page-title {
 .page-container {
     height: 450px;
     overflow-y: auto;
-}
-
-.circle-icon {
-    width: 12px;
-    fill: #b2b2b2;
-    margin-left: 8px;
-
-    &.selected {
-        fill: $blue;
-    }
-}
-
-#voicemail-options {
-    position: fixed;
-    background-color: #f6f6f6;
-    bottom: 27px;
-    left: 0;
-    right: 0;
-    height: 18px;
-    z-index:99;
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    align-items: center;
-    padding: 10px;
-    border-top: .5px solid #dddddd;
-    color: #cacaca;
-
-    .enable {
-        color: $blue;
-    }
 }

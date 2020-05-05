@@ -39,6 +39,7 @@ export const applicationList: IAppItemProps[] = [
     //{ name: 'Home', icon: 'home' },
     //{ name: 'Notes', icon: 'notes' },
     //{ name: 'Stocks', icon: 'stocks' },
+    { name: 'Réglages', icon: 'settings', path: 'Settings' },
     { name: 'Banque', icon: 'wallet', path: 'bank' },
     //{ name: 'Workspace', icon: 'workspace' },
     { name: 'App Store', icon: 'appstore' },
@@ -46,7 +47,6 @@ export const applicationList: IAppItemProps[] = [
     { name: 'Contacts', icon: 'contacts', path: 'contacts' },
     //{ name: 'WhatsApp', icon: 'whatsapp' },
     //{ name: 'Local', icon: 'local' },
-    { name: 'Réglages', icon: 'settings', notifications: 1 },
     { name: 'Calculator', icon: 'calculator', path: 'calculator' }
 ]
 

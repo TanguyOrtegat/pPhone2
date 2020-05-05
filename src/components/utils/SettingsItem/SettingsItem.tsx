@@ -9,6 +9,7 @@ import { faBluetoothB } from '@fortawesome/free-brands-svg-icons'
 import { Switch } from "react-router-dom";
 import BackIcon from '../../../assets/icons/back_right.svg'
 
+//import { Checkbox } from 'react-native-ios-kit';
 
 export interface ISetting {
   id: number,

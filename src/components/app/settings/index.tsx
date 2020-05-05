@@ -23,17 +23,17 @@ export interface ISettingsProps {
 }
 
 const settingsDataList: ISettingsProps[] = [
-    { id: 1, title: 'Mode Avion', img: faPlaneDeparture, imgType: 'fontAwesome-icon1', imgColor: '#fff', backround: '#ff9900', checkbox: true },
-    { id: 2, title: 'Wifi', img: faWifi, imgType: 'fontAwesome-icon1', imgColor: '#fff', backround: '#327bf6', /*rightLabel: "test" */ },
-    { id: 3, title: 'Bluetooth', img: faBluetooth, imgType: 'fontAwesome-icon2', imgColor: '#fff', backround: '#327bf6'  },
-    { id: 4, title: 'Cartes SIM', img: faSimCard, imgType: 'fontAwesome-icon4', imgColor: '#fff', backround: '#00ff99'  },
+    { id: 1, title: 'Mode Avion', img: faPlaneDeparture, imgType: 'fontAwesome-icon1', imgColor: '#fff', backround: '#f09a37', checkbox: true },
+    { id: 2, title: 'Wifi', img: faWifi, imgType: 'fontAwesome-icon1', imgColor: '#fff', backround: '#3478f6 ', /*rightLabel: "test" */ },
+    { id: 3, title: 'Bluetooth', img: faBluetooth, imgType: 'fontAwesome-icon2', imgColor: '#fff', backround: '#3478f6 '  },
+    { id: 4, title: 'Cartes SIM', img: faSimCard, imgType: 'fontAwesome-icon4', imgColor: '#fff', backround: '#65c466'  },
 
     { id: 0, alt: true },
-    { id: 5, title: 'Notifications', img: faBell, imgType: 'fontAwesome-icon2', imgColor: '#fff', backround: '#ff0000'  },
-    { id: 6, title: 'Sons & Vibrations', img: faVolumeUp, imgType: 'fontAwesome-icon3', imgColor: '#fff', backround: '#ff0000'  },
-    { id: 7, title: 'Fond d\'ecran', img: faPalette, imgType: 'fontAwesome-icon3', imgColor: '#fff', backround: '#33cccc'  },
-    { id: 8, title: 'Mode Nuit', img: faMoon, imgType: 'fontAwesome-icon3', imgColor: '#fff', backround: '#666699'  },
-    { id: 9, title: 'Theme', img: faBrush, imgType: 'fontAwesome-icon4', imgColor: '#fff', backround: '#660066'  },
+    { id: 5, title: 'Notifications', img: faBell, imgType: 'fontAwesome-icon2', imgColor: '#fff', backround: '#d70015'  },
+    { id: 6, title: 'Sons & Vibrations', img: faVolumeUp, imgType: 'fontAwesome-icon3', imgColor: '#fff', backround: '#d70015'  },
+    { id: 7, title: 'Fond d\'ecran', img: faPalette, imgType: 'fontAwesome-icon3', imgColor: '#fff', backround: '#70d7ff'  },
+    { id: 8, title: 'Mode Nuit', img: faMoon, imgType: 'fontAwesome-icon3', imgColor: '#fff', backround: '#5756ce'  },
+    { id: 9, title: 'Theme', img: faBrush, imgType: 'fontAwesome-icon4', imgColor: '#fff', backround: '#8944ab'  },
 
 ]
 
@@ -60,13 +60,17 @@ const Settings: React.FC = (props: any) => {
 
     return (
         <AppContainer>
-            <HeaderApp title="Réglages" onClickOnRightText={() => {}} />
-            <div className="settings-banner"> </div>
+            <div className = "settingsBackround">
+                <HeaderApp title="Réglages" onClickOnRightText={() => {}} />
+                <div className="settings-banner"> </div>
 
-            <Switch>
-                <Route exact path={props.match.path} component={SettingsList} />
-                {/*<Route path={`${props.match.path}/:id`} component={MessagePage} />*/}
-            </Switch>
+                <Switch>
+                    <Route exact path={props.match.path} component={SettingsList} />
+                    {/*<Route path={`${props.match.path}/:id`} component={MessagePage} />*/}
+                </Switch>
+                <div className="settings-banner3"> </div>
+
+            </div>
         </AppContainer>
     )
 };

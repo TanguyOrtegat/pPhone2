@@ -1,48 +1,67 @@
-
 .app-icon {
-    display: block;
-    position: relative;
-    // background-color: red;
-    width: 48px;
-    
-    margin-right: 12px;
-    margin-bottom: 8px;
+  display: block;
+  position: relative;
+  // background-color: red;
+  width: 48px;
 
-    text-align: center;
+  margin-right: 12px;
+  margin-bottom: 8px;
 
-    color: white;
-    text-decoration: none;
-    &:hover {
-        background-color: rgba(240, 240, 240, 0.1);
-        border-radius: 8px;
-    }
+  text-align: center;
+
+  color: white;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(240, 240, 240, 0.1);
+    border-radius: 8px;
+  }
 }
 
 .app-icon-image {
-    width: 42px;
-    height: 42px;
+  width: 42px;
+  height: 42px;
 
-    display:block;
-    margin:auto;
+  display: block;
+  margin: auto;
 
-    background-size: contain;
-    background-repeat: no-repeat;
- }
+  background-size: contain;
+  background-repeat: no-repeat;
 
- .app-text {
-    font-size: 9px;
-    color: rgba(240, 240, 240, 0.8);
-    padding-bottom: 6px;
+  &.icon-calendar {
+    background-color: white;
+    border-radius: 8px;
+    font-family: "SFProTextLight";
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 {
+      margin: 0;
+      font-size: 8px;
+      color: #ec5a4b;
+    }
+
+    div {
+      font-size: 24px;
+      color: black;
+      margin: -4px 0;
+    }
+  }
+}
+
+.app-text {
+  font-size: 9px;
+  color: rgba(240, 240, 240, 0.8);
+  padding-bottom: 6px;
 }
 
 .app-notification-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    padding: 2px 5px;
-    border-radius: 7px;
-    background: red;
-    color: white;
-    font-size: 9px;
-  }
-  
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 2px 5px;
+  border-radius: 7px;
+  background: red;
+  color: white;
+  font-size: 9px;
+}

@@ -6,6 +6,7 @@
     transition: 0.4s;
     cursor: pointer;
 
+    height: 15px;
     padding-bottom: 7px;
     padding-top: 7px;
 }
@@ -14,7 +15,7 @@
     width: 100%;
     height: 35px;
 
-    background-color: rgba(0, 0, 0, 0.082);
+    background-color: #f2f2f7;
 
     bottom: 0;
     left: 0;
@@ -22,9 +23,9 @@
 
 .settings-banner2 {
     width: 100%;
-    height: 35px;
+    height: 24px;
 
-    background-color: rgba(0, 0, 0, 0.082);
+    background-color: #f2f2f7;
 
     bottom: 0;
     left: 0;
@@ -35,6 +36,8 @@
     user-select: none;
     transition: 0.3s;
 
+
+
     &:hover {
         background-color: #130c0c0f;
     }
@@ -43,12 +46,13 @@
 .settings-img-container {
     position: relative;
     //background-color: #faa1a1;
-    border-radius: 30%;
+    border-radius: 20%;
     padding: 3.75px;
 
     height: 14px;
     width: 14px;
     margin-left: 5%;
+    margin-top: -1.05%;
 
     img {
         height: 14px;
@@ -90,11 +94,11 @@
 
 
 .text-settings {
-    padding-top: 3.80px;
     font-size: 10.5px;
-    font-family: 'Segoe UI';
-    margin-left: 5%;
+    font-family: 'SFProTextRegular';
+    margin-left: 4%;
+    margin-top: 0.7%;
 
     //font-weight: 500;
-    font-weight: 480;
+    font-weight: 490;
 }

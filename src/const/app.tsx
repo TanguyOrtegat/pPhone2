@@ -3,7 +3,6 @@ import { IAppItemProps } from "../components/home/appitem";
 import MailIcon from '../assets/icons/mail.png'
 import PhotosIcon from '../assets/icons/photos.png'
 import CameraIcon from '../assets/icons/camera.png'
-import CalendarIcon from '../assets/icons/calendar.png'
 import MapIcon from '../assets/icons/maps.png'
 import ClockIcon from '../assets/icons/clock.png'
 import WeatherIcon from '../assets/icons/weather.png'
@@ -61,7 +60,6 @@ export const iconList = {
     'mail': MailIcon,
     'photos': PhotosIcon,
     'camera': CameraIcon,
-    'calendar': CalendarIcon,
     'map': MapIcon,
     'clock': ClockIcon,
     'weather': WeatherIcon,

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import ActionModal, { ActionsModalProps } from "../../utils/ActionsModal";
+import HeaderApp from "../../utils/HeaderApp";
+
 import "./Phone.scss";
-import PlusIcon from "../../../assets/icons/plus.svg";
-import { ReactSVG } from "react-svg";
 
 import LtdPhoto from "../../../assets/contacts-photo/ltd.png";
 import EmsPhoto from "../../../assets/contacts-photo/ems.png";
 import TaxiPhoto from "../../../assets/contacts-photo/taxi.png";
 import GaragePhoto from "../../../assets/contacts-photo/garage.png";
 import PolicePhoto from "../../../assets/contacts-photo/police.png";
-import ActionModal, { ActionsModalProps } from "../../utils/ActionsModal";
+
 
 interface FavouriteContact {
   id: number;
@@ -52,13 +53,7 @@ const FavouritesPage: React.FC = () => {
   return (
     <div id="favourites-page">
       {state.actionContact && <ActionModal {...getActions()} />}
-      <div className="header">
-        <div className="header-left">
-          <ReactSVG src={PlusIcon} className="plus-icon" />
-        </div>
-        <div className="header-middle">Favourites</div>
-        <div className="header-right"></div>
-      </div>
+      <HeaderApp leftPlusIcon={true} title="Favourites" />
       <ul className="list-view">{getFavourites()}</ul>
     </div>
   );

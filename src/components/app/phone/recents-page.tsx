@@ -3,6 +3,7 @@ import './Phone.scss';
 import { ReactSVG } from 'react-svg';
 import OutgoingIcon from '../../../assets/icons/outgoing-call.svg';
 import MinusIcon from '../../../assets/icons/minus-circle.svg';
+import HeaderApp from '../../utils/HeaderApp';
 
 interface ICall {
     id: number,
@@ -43,16 +44,14 @@ const RecentsPage: React.FC = () => {
 
     return (
         <div id="recents-page">
-            <div className="header">
-                <div className="header-left">
-                    {state.deleteMode && <div onClick={removeAllCalls}>Clear</div>}
-                </div>
-                <div className="header-middle call-filter">
+            <HeaderApp leftText={state.deleteMode ? "clear" : ""} leftOnClick={state.deleteMode ? removeAllCalls : undefined} 
+                rightText={state.deleteMode ? "Done" : "Edit"} rightOnClick={toggleDeleteMode} noBorder={true}
+            >
+                <div className="call-filter">
                     <div className={`call-filter-btn ${state.onlyMissed ? "" : "active"}`} onClick={toggleOnlyMissed}>All</div>
                     <div className={`call-filter-btn ${state.onlyMissed ? "active" : ""}`} onClick={toggleOnlyMissed}>Missed</div>
                 </div>
-                <div className="header-right" onClick={toggleDeleteMode}>{state.deleteMode ? "Done" : "Edit"}</div>
-            </div>
+            </HeaderApp>
             <div className="page-container">
                 <h1 className="page-title">Recents</h1>
                 <ul id="recents-list" className="list-view">{getCalls()}</ul>

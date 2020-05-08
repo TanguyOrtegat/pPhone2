@@ -3,40 +3,6 @@ $btn-call-background: #63c366;
 $red: #eb4e3d;
 $blue: #327bf6;
 
-.header {
-  margin-top: 10px;
-  padding: 0 10px;
-  height: 30px;
-  display: flex;
-  font-size: 12px;
-  align-items: center;
-  justify-content: space-between;
-
-  .header-right {
-    flex: 1;
-    text-align: right;
-    color: $blue;
-  }
-
-  .header-left {
-    flex: 1;
-    text-align: left;
-    color: $blue;
-  }
-
-  &.header-disable {
-    .header-left,
-    .header-right {
-      color: #bbbbbd;
-    }
-  }
-
-  .header-middle {
-    width: 100px;
-    text-align: center;
-  }
-}
-
 #favourites-page {
   .favourites-container {
     height: 450px;
@@ -224,6 +190,10 @@ $blue: #327bf6;
 
   .details {
     margin-right: 8px;
+  }
+
+  li:first-child {
+    border-top: 0.5px solid #dddddd;
   }
 }
 
@@ -437,10 +407,6 @@ ul.list-view {
     .circle-checkbox {
       margin-left: 8px;
     }
-  }
-
-  li:first-child {
-    border-top: 0.5px solid #dddddd;
   }
 }
 

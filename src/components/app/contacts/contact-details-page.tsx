@@ -1,41 +1,35 @@
 import React, { useState } from "react";
+import useReactRouter from "use-react-router";
+import HeaderApp from "../../utils/HeaderApp";
+
 import "./Contacts.scss";
-import BackIcon from "../../../assets/icons/back.svg";
+
 import PhoneIcon from "../../../assets/icons/phone-fill.svg";
 import MessageIcon from "../../../assets/icons/message.svg";
 import FacetimeIcon from "../../../assets/icons/facetime.svg";
 import MailIcon from "../../../assets/icons/mail-fill.svg";
 import DollarIcon from "../../../assets/icons/dollar.svg";
 import { ReactSVG } from "react-svg";
-import { Link } from "react-router-dom";
-import useReactRouter from "use-react-router";
+
 
 const ContactDetailsPage: React.FC = () => {
   const [edit, setEdit] = useState(false);
   const toggleEdit = () => setEdit(!edit);
 
-  const { location } = useReactRouter();
+  const { location, history } = useReactRouter();
 
-  const backToContacts = (
-    <Link to={location.pathname.slice(0, location.pathname.lastIndexOf("/"))} className="header-left">
-      <ReactSVG id="back-icon" src={BackIcon} /> Contacts
-    </Link>
-  );
-
-  const cancel = (
-    <div className="header-left" onClick={toggleEdit}>
-      Cancel
-    </div>
-  );
+  const backToContacts = () => history.push(location.pathname.slice(0, location.pathname.lastIndexOf("/")));
 
   return (
     <div id="contact-details-page">
-      <div className="header">
-        {edit ? cancel : backToContacts}
-        <div className="header-right" onClick={toggleEdit}>
-          {edit ? "Done" : "Edit"}
-        </div>
-      </div>
+      <HeaderApp
+        leftText={edit ? "Cancel" : "Contacts"}
+        leftBackIcon={true}
+        leftOnClick={edit ? toggleEdit : backToContacts}
+        rightText={edit ? "Done" : "Edit"}
+        rightOnClick={toggleEdit}
+        noBorder={true}
+      />
       <div className="photo-container">
         <div id="contact-photo" className={edit ? "photo-lg" : ""}>
           JD

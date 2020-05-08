@@ -43,7 +43,7 @@ const MessageList: React.FC = (props: any) => {
 const Messages: React.FC = (props: any) => {
     return (
         <AppContainer>
-            <HeaderApp title="Messages" rightText="Write" onClickOnRightText={() => {}} />
+            <HeaderApp title="Messages" rightText="Write" />
             <Switch>
                 <Route exact path={props.match.path} component={MessageList} />
                 <Route path={`${props.match.path}/:id`} component={MessagePage} />

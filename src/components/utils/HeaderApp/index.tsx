@@ -1,45 +1,42 @@
 import React from "react";
-import './HeaderApp.scss'
+import "./HeaderApp.scss";
 import { ReactSVG } from "react-svg";
+import BackIcon from "../../../assets/icons/back.svg";
+import Searchbar from "../Searchbar";
+import PlusIcon from "../../../assets/icons/plus.svg";
 
-import BackIcon from '../../../assets/icons/back.svg'
-import { withRouter, RouteComponentProps } from "react-router-dom";
-
-export interface IHeaderAppProps extends RouteComponentProps {
-    onClickOnArrow?: (args0: any) => void,
-
-    onClickOnLeftText?: (args0: any) => void,
-    onClickOnRightText?: (args0: any) => void,
-    leftText?: string,
-    rightText?: string,
-    color?: string,
-
-    title?: string,
-    titleColor?: string
+interface IHeaderAppProps {
+  title?: string;
+  disable?: boolean;
+  noBorder?: boolean;
+  leftText?: string;
+  leftPlusIcon?: boolean;
+  leftBackIcon?: boolean;
+  leftOnClick?: (args0: any) => void;
+  rightText?: string;
+  rightPlusIcon?: boolean;
+  rightOnClick?: (args0: any) => void;
+  onSearchChanged?: (search: string) => void;
 }
 
-const HeaderApp: React.FC<IHeaderAppProps> = (props: IHeaderAppProps) => {
-    const headerColor = props.color || "#397fda";
-    const titleColor = props.titleColor || "black";
-
-    const goBack = () => {
-        props.history.goBack()
-    }
-
-    return (
-        <div className="header-app" style={{ color: headerColor }}>
-            <div className="header-app-left">
-                <ReactSVG onClick={props.onClickOnArrow || goBack} src={`${BackIcon}`} fallback={() => <span>Error!</span>} className="header-app-arrow" style={{ fill: headerColor }} />
-                {props.onClickOnLeftText && props.leftText && <div className="header-app-left-text" onClick={props.onClickOnLeftText}>{props.leftText}</div>}
-            </div>
-
-            {props.title && <span className="header-app-title" style={{ color: titleColor }}>{props.title}</span>}
-
-            <div className="header-app-right">
-                {props.onClickOnRightText && props.rightText && <div className="header-app-right-text" onClick={props.onClickOnRightText}>{props.rightText}</div>}
-            </div>
+const HeaderApp: React.FC<IHeaderAppProps> = (props) => {
+  return (
+    <div id="header-app" className={`${props.noBorder ? "no-border" : ""} ${props.disable ? "disable" : ""}`}>
+      <div className="header-row">
+        <div className="header-left" onClick={props.disable ? undefined : props.leftOnClick}>
+          {props.leftBackIcon && <ReactSVG className="back-icon" src={BackIcon} />}
+          {props.leftPlusIcon && <ReactSVG className="plus-icon" src={PlusIcon} />}
+          {props.leftText}
         </div>
-    )
-}
+        <div className="header-middle">{props.title}{props.children}</div>
+        <div className="header-right" onClick={props.disable ? undefined : props.rightOnClick}>
+          {props.rightText}
+          {props.rightPlusIcon && <ReactSVG className="plus-icon" src={PlusIcon} />}
+        </div>
+      </div>
+      {props.onSearchChanged && <Searchbar onSearchChanged={props.onSearchChanged} />}
+    </div>
+  );
+};
 
-export default withRouter(HeaderApp);
+export default HeaderApp;

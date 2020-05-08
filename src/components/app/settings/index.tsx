@@ -61,7 +61,7 @@ const Settings: React.FC = (props: any) => {
     return (
         <AppContainer>
             <div className = "settingsBackround">
-                <HeaderApp title="Réglages" onClickOnRightText={() => {}} />
+                <HeaderApp title="Réglages" />
                 <div className="settings-banner"> </div>
 
                 <Switch>

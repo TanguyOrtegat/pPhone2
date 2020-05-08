@@ -36,7 +36,7 @@ const Mail: React.FC = (props: any) => {
 
     return (
         <AppContainer>
-            <HeaderApp title="Inbox" leftText="Personal" rightText="Edit" onClickOnLeftText={() => setEdit(!edit)} onClickOnRightText={() => {}} />
+            <HeaderApp title="Inbox" leftText="Personal" leftOnClick={() => setEdit(!edit)} rightText="Edit" />
             <div className="mail-box">
                 {getMail()}
             </div>

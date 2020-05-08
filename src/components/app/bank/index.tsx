@@ -91,7 +91,7 @@ const Transaction: React.FC<ITransaction> = (props: ITransaction) => {
 const Bank: React.FC = () => {
     return (
         <AppContainer>
-            <HeaderApp color="#000000" title="Bank" />
+            <HeaderApp title="Bank" />
             <AccountPage />
         </AppContainer>
     )

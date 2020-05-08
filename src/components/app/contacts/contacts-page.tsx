@@ -1,10 +1,8 @@
 import React from "react";
 import "./Contacts.scss";
-import Searchbar from "../../utils/Searchbar";
-import PlusIcon from "../../../assets/icons/plus.svg";
-import { ReactSVG } from "react-svg";
 import { Link } from "react-router-dom";
 import useReactRouter from "use-react-router";
+import HeaderApp from "../../utils/HeaderApp";
 
 interface Contact {
   id: number;
@@ -67,16 +65,7 @@ const ContactsPage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <div className="header-container">
-        <div className="header">
-          <div className="header-left">Groups</div>
-          <div className="header-middle">Contacts</div>
-          <div className="header-right">
-            <ReactSVG id="plus-icon" src={PlusIcon} />
-          </div>
-        </div>
-        <Searchbar />
-      </div>
+      <HeaderApp leftText="Groups" title="Contacts" rightPlusIcon={true} onSearchChanged={(text) => undefined} />
       <div className="page-container">
         <ul id="contact-list">{getContacts()}</ul>
       </div>

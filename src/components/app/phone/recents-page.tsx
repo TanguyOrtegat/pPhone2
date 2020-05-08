@@ -42,7 +42,7 @@ const RecentsPage: React.FC = () => {
         .map(call => <Call key={call.id} {...call} deleteMode={state.deleteMode} onCallDeleted={() => removeCall(call.id)} />);
 
     return (
-        <div>
+        <div id="recents-page">
             <div className="header">
                 <div className="header-left">
                     {state.deleteMode && <div onClick={removeAllCalls}>Clear</div>}
@@ -55,7 +55,7 @@ const RecentsPage: React.FC = () => {
             </div>
             <div className="page-container">
                 <h1 className="page-title">Recents</h1>
-                <ul className="list-view">{getCalls()}</ul>
+                <ul id="recents-list" className="list-view">{getCalls()}</ul>
             </div>
         </div>
     );

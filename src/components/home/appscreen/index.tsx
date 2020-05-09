@@ -8,8 +8,8 @@ import { applicationList } from "../../../const/app";
 
 const AppScreen: React.FC = () => {
     const getApplications = () => {
-        return applicationList.map((e) => {
-            return <AppItem {...e} />
+        return applicationList.map((app, index) => {
+            return <AppItem key={index} {...app} />
         })
     }
 

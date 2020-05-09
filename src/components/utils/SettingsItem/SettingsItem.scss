@@ -1,0 +1,104 @@
+.item-settings {
+    border-bottom: thin solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    transition: 0.4s;
+    cursor: pointer;
+
+    height: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.settings-banner {
+    width: 100%;
+    height: 35px;
+
+    background-color: #f2f2f7;
+
+    bottom: 0;
+    left: 0;
+}
+
+.settings-banner2 {
+    width: 100%;
+    height: 24px;
+
+    background-color: #f2f2f7;
+
+    bottom: 0;
+    left: 0;
+}
+
+.settings-core {
+    transition: 0.4s;
+    user-select: none;
+    transition: 0.3s;
+
+
+
+    &:hover {
+        background-color: #130c0c0f;
+    }
+}
+
+.settings-img-container {
+    position: relative;
+    //background-color: #faa1a1;
+    border-radius: 20%;
+    padding: 3.75px;
+
+    height: 14px;
+    width: 14px;
+    margin-left: 5%;
+    margin-top: -1.05%;
+
+    img {
+        height: 14px;
+        width: 14px; 
+    }
+}
+
+.fontAwesome-icon1 {
+    position: relative;
+    top: -4.90px;
+    left: -3px;
+    height: 10px;
+    width: 10px;
+}
+
+.fontAwesome-icon2 {
+    position: relative;
+    top: -4.90px;
+    left: -0px;
+    height: 10px;
+    width: 10px;
+}
+
+.fontAwesome-icon3 {
+    position: relative;
+    top: -4.90px;
+    left: -1.15px;
+    height: 10px;
+    width: 10px;
+}
+
+.fontAwesome-icon4 {
+    position: relative;
+    top: -4.90px;
+    left: 1.5px;
+    height: 10px;
+    width: 10px;
+}
+
+
+.text-settings {
+    font-size: 10.5px;
+    font-family: 'SFProTextRegular';
+    margin-left: 4%;
+    margin-top: 0.7%;
+
+    //font-weight: 500;
+    font-weight: 490;
+}

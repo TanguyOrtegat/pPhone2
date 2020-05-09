@@ -1,48 +1,47 @@
 .phone-header {
-    position: relative;
     width: 100%;
     user-select: none;
-    padding-top: 12px;
-    height: 17px;
-    z-index: 1;
-    /*margin-top: 12px; */
+    padding: 12px 0 4px 0;
+    height: 13px;
     font-family: "SFProTextSemibold";
-    color: white;
-
+    position: relative;
     z-index: 99;
-}
+    display: flex;
+    justify-content: space-between;
 
-.phone-header-right {
-    width: 20%;
-    height: 100%;
+    &.phone-header-light {
+        fill: white;
+        color: white;
+    }
 
-    float: right;
+    &.phone-header-dark {
+        fill: black;
+        color: black;
+    }
 }
 
 .phone-header-left {
-    display: inline-block;
-    width: 17%;
-    height: 100%;
+    width: 42px;
+    padding-left: 14px;
+    display: flex;
+    align-items: center;
+}
 
-    margin: 0 auto;
-    margin-left: 14px;
+.phone-header-right {
+    width: 56px;
+    display: flex;
+    align-items: center;
 }
 
 .phone-header-icon {
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin: 0 2px 4px 2px;
 
-    margin-right: 4px;
-
-    width: 10.5px;
-    height: 14px;
+    svg {
+        height: 7px;
+    }
 }
 
 .phone-header-time {
-    position: absolute;
-
     font-size: 10.5px;
-
-    font-weight: 500;
+    margin: 0;
 }

@@ -14,8 +14,14 @@ const Bank = React.lazy(() =>
     import('./components/app/bank/index'));
 const Phone = React.lazy(() =>
     import('./components/app/phone/index'));
+const Contacts = React.lazy(() =>
+    import('./components/app/contacts/index'))
+const Calculator = React.lazy(() =>
+    import('./components/app/calculator/index'));
 const Call = React.lazy(() =>
     import('./components/home/call/index'));
+const Settings = React.lazy(() =>
+    import  ('./components/app/settings/index'));
 
 const routes = [
     { path: '/', exact: true, component: AppScreen },
@@ -25,7 +31,10 @@ const routes = [
     { path: '/app/messages', component: Messages },
     { path: '/app/notes', component: Notes },
     { path: '/app/bank', exact: true, component: Bank },
-    { path: '/app/phone', component: Phone }
+    { path: '/app/contacts', component: Contacts },
+    { path: '/app/phone', component: Phone },
+    { path: '/app/settings', exact: true, component: Settings },
+    { path: '/app/calculator', exact: true, component: Calculator }
 ]
 
 export default routes;

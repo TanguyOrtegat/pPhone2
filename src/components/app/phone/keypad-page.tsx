@@ -15,7 +15,7 @@ const KeypadPage: React.FC = () => {
     const deletePressed = () => number.length > 0 && setNumber(number.substr(0, number.length - 1));
 
     return (
-        <div className="keypad-container">
+        <div id="keypad-page">
             <div className="keypad-header">
                 <h2 className="keypad-number">{number}</h2>
             </div>

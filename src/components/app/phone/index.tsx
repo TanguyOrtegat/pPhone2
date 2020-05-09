@@ -13,6 +13,8 @@ import StarIcon from "../../../assets/icons/star-fill.svg";
 import CircleGridIcon from "../../../assets/icons/circle-grid.svg";
 import PersonCircleIcon from "../../../assets/icons/person-circle.svg";
 import VoicemailIcon from "../../../assets/icons/voicemail.svg";
+import ContactsPage from "../contacts/contacts-page";
+import ContactDetailsPage from "../contacts/contact-details-page";
 
 
 
@@ -42,6 +44,8 @@ const Phone: React.FC = (props: any) => {
                 <Route path={paths.recents} component={RecentsPage} />
                 <Route path={paths.voicemail} component={VoicemailPage} />
                 <Route path={paths.favourites} component={FavouritesPage} />
+                <Route path={paths.contact} exact component={ContactsPage} />
+                <Route path={`${paths.contact}/:id`} component={ContactDetailsPage} />
             </Switch>
             <TabsNavigator tabs={tabs}></TabsNavigator>
         </AppContainer >

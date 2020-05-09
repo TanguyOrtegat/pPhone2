@@ -1,74 +1,68 @@
-.header-app {
+$blue: #327bf6;
+
+#header-app {
+  &:not(.no-border) {
+    border-bottom: 0.5px solid #dddddd;
+  }
+
+  .header-row {
+    margin-top: 10px;
+    padding: 0 10px;
+    height: 30px;
     display: flex;
-    width: 100%;
     font-size: 12px;
-    padding: 10px 5px 5px 0px;
-    border-bottom: thin solid;
-    border-color: rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-}
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.header-app > div {
-    display: inline-block;
-}
+  .header-row + div {
+    margin-bottom: 10px;
+  }
 
-.header-app-arrow {
-    text-align: center;
-    display: inline-block;
-    width: 8px;
-    height: 4px;
-
-    padding-left: 5px;
-    padding-right: 4px;
-    padding-bottom: 10px;
-
-    &:hover {
-        border-radius: 4px;
-        background-color: rgba(19, 12, 12, 0.070);
-    }
-}
-
-.header-app-left {
-    flex: 1;
-    float: left;
-    text-align: left;
-    padding-top: 5px;
-}
-
-.header-app-left-text {
-    display: inline-block;
-    transition: 0.5s;
-    padding: 0px 15px 5px 5px;
-
-    &:hover {
-        border-radius: 4px;
-        background-color: rgba(19, 12, 12, 0.070);
-    }
-}
-
-.header-app-title {
-    flex: 1;
-    left: 0; 
-    right: 0;
-
-    padding-top: 5px;
-    text-align: center;
-}
-
-.header-app-right {
-    flex: 1;
-    float: right;
+  .header-right {
     text-align: right;
-    transition: 0.5s;
-}
-
-.header-app-right-text {
-    display: inline-block;
-    font-size: 12px;
-    padding: 5px 15px 5px 5px;
-
-    &:hover {
-        border-radius: 4px;
-        background-color: rgba(19, 12, 12, 0.070);
+    .icon {
+      margin-left: auto;
     }
+  }
+
+  .header-left {
+    text-align: left;
+    display: flex;
+  }
+
+  .header-left,
+  .header-right {
+    flex: 1;
+    color: $blue;
+    fill: $blue;
+    cursor: pointer;
+  }
+
+  &.disable {
+    .header-left,
+    .header-right {
+      color: #bbbbbd;
+    }
+    fill: #bbbbbd;
+  }
+
+  .back-icon {
+    margin: 1px 1px 0 -5px;
+    svg {
+      height: 12px;
+    }
+  }
+
+  .header-middle {
+    width: 100px;
+    text-align: center;
+  }
+
+  .plus-icon {
+    fill: $blue;
+    svg {
+      height: 12px;
+    }
+  }
 }

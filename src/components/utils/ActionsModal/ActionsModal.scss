@@ -1,0 +1,62 @@
+.action-modal-container {
+  z-index: 100;
+  background-color: #707070aa;
+  bottom: 27px;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+#action-modal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  color: #327bf6;
+  font-size: 13px;
+
+  ul {
+    background-color: #d5d5d5;
+    list-style: none;
+    margin: 0 0 5px 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 0;
+    &:not(:first-child) {
+      border-top: #a9a9a9 0.5px solid;
+    }
+
+    &.action-description {
+      height: 30px;
+      line-height: 30px;
+      font-size: 10px;
+      color: #8f8f8f;
+    }
+  }
+
+  div {
+    background-color: white;
+    font-weight: bold;
+  }
+
+  div,
+  ul {
+    border-radius: 10px;
+  }
+
+  div,
+  li {
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .action-destructive {
+    color: #eb4e3d;
+  }
+}

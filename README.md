@@ -1,3 +1,5 @@
+This is not my script, it is from pichotm#6445, all credits goes to him. Don't contact me for this script. Thank you
+
 # pPhone2
 <br/>
 
